@@ -1,9 +1,22 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import moonImg from "../../assets/moonImg.png";
 import { BoardContext } from "../../context";
 
 const MoonPhases = () => {
-    const { dayNumber, synodicPeriodNumberOfDays } = useContext(BoardContext);
+    const { dayNumber, initialNewMoonDate, synodicPeriodNumberOfDays } = useContext(BoardContext);
+    
+    const [currentDate, setCurrentDate] = useState<string>("Wed, 13 July 2022 07:15:00 GMT");
+    
+    useEffect( () => {
+        addDays(dayNumber)
+    }, [dayNumber])
+
+    const addDays = (additionalDays: number) => {
+        var result = new Date(initialNewMoonDate);
+        result.setDate(result.getDate() + Math.abs(additionalDays));
+        setCurrentDate( result.toUTCString() );
+    }
+
     const numberOfSynodicPeriod: number = Math.abs(dayNumber) / synodicPeriodNumberOfDays;
     const progressOfTheMoonMovementInSynodicPeriodInPercentage: number = numberOfSynodicPeriod - Math.floor(numberOfSynodicPeriod);
     const progressOfTheMoonMovementInSynodicPeriodInDays: number = synodicPeriodNumberOfDays * progressOfTheMoonMovementInSynodicPeriodInPercentage;
@@ -54,7 +67,8 @@ const MoonPhases = () => {
 
     return (
         <div className="moon_phases_wrapper">
-            <p style={{position: "absolute", top: 0, left: 0}}> {value} </p>
+            <div className="current_date"> {currentDate} </div>
+            <div className="current_synodic_day"> {value} </div>
             <div className="vertical_rooler"></div>
             <img className="moon_picture" src={moonImg} alt="moon"  /> 
             <div className="moon_shadow_wrapper">

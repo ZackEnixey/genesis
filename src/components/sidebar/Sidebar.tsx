@@ -1,10 +1,7 @@
-import { setMaxListeners } from "process";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext } from "react";
 import { BoardContext } from "../../context";
 import text from "../language/checkLanguageInput";
 import AdjustEarthToSunAngle from "./AdjustEarthToSunAngle";
-
-type TArrowDirection = "up" | "down";
 
 const Sidebar = () => {
     const {
@@ -22,7 +19,6 @@ const Sidebar = () => {
         theNumberOfDegreesTheMoonMovesEachDayAccordingToOurEyes
     } = useContext(BoardContext);
 
-    const angleInRadians = earthAngleToSun*Math.PI/180;
     const theMoonShiftDeegreesAccordintToTheNumberOfDays: number = dayNumber * theNumberOfDegreesTheMoonMovesEachDayComparedToTheEarth
 
     return (
@@ -67,7 +63,8 @@ const Sidebar = () => {
                     <div> Current SIDERAL Moon-to-Earth angle: <b>{theMoonShiftDeegreesAccordintToTheNumberOfDays}</b> </div>
                 </div> 
 
-                <p>  </p>
+                <p> sideral circle: {Math.abs(dayNumber*theNumberOfDegreesTheMoonMovesEachDayComparedToTheEarth)} </p>
+                <p> synodic circle: {Math.abs(dayNumber*theNumberOfDegreesTheMoonMovesEachDayAccordingToOurEyes)} </p>
                 
                 <div>
                     <b> SYNODIC PERIOD: </b> 
@@ -76,6 +73,7 @@ const Sidebar = () => {
                     <div> Current SYNODIC Moon-Shadow angle: <b>{theMoonShiftDeegreesAccordintToTheNumberOfDays}</b> </div>
                 </div> 
 
+                
             </div>
         </div>
     )

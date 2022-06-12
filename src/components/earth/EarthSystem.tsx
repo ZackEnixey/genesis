@@ -31,26 +31,6 @@ const EarthSystem = () => {
             <Moon />
         </div>
     )
-
-    /*
-    // // This is for DRAG AND DROP
-    // return (
-    //     <div className="earth_wrapper"> 
-    //         <Rnd
-    //             style={{ cursor: 'pointer' }}
-    //             enableResizing={false}
-    //             position={{ x: 0, y: 0 }}
-    //             disableDragging={false}
-    //             onDragStart={() => {}}
-    //             onDragStop={(e, d) => {console.log({ x: d.x, y: d.y }) }}
-    //         >
-    //             <section className="earth_secion" >
-    //                 <Moon />
-    //             </section>
-    //         </Rnd>
-    //     </div>
-    // )
-    */
 }
 
 export default EarthSystem;

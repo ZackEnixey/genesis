@@ -1,9 +1,9 @@
 .moon_wrapper {
     position: relative;
-    bottom: 14vh;
-    right: 14vh;
-    height: 28vh;
-    width: 28vh;
+    bottom: 10vh;
+    right: 10vh;
+    height: 20vh;
+    width: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,8 +13,8 @@
         position: absolute;
         left: 0;
         top: 0;
-        width: 5vh;
-        height: 5vh;
+        width: 3vh;
+        height: 3vh;
         border-radius: 50%;
     }
 
@@ -22,10 +22,10 @@
         position: absolute;
         left: 0;
         top: 0;
-        width: 5vh;
-        height: 5vh;
+        width: 3vh;
+        height: 3vh;
         border-radius: 50%;
         transform: rotate(-40deg);
-        box-shadow: inset 4vh 3vh 1vh -2.5vh rgba(0, 0, 0, 0.8);
+        box-shadow: inset 2vh 1vh 1vh -1vh rgba(0, 0, 0, 0.8);
     }
 }

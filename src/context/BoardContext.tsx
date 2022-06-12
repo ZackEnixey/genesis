@@ -22,6 +22,8 @@ interface IBoardContext {
     earthTrajectoryHeight: number; 
     setEarthTrajectoryHeight(earthTrajectoryHeight: number): void;
 
+    initialNewMoonDate: Date;
+
     sideralPeriodNumberOfDays: number;
     synodicPeriodNumberOfDays: number;
 
@@ -47,6 +49,8 @@ const BoardContextProvider: FC<BoardContextProps> = (props) => {
     const [earthTrajectoryWidth, setEarthTrajectoryWidth] = useState<number>(60);
     const [earthTrajectoryHeight, setEarthTrajectoryHeight] = useState<number>(40);
 
+    const initialNewMoonDate: Date = new Date("June 29, 2022 04:52:00");
+
     const sideralPeriodNumberOfDays: number = 27.3215278
     const synodicPeriodNumberOfDays: number = 29.53058770576;
 
@@ -69,6 +73,7 @@ const BoardContextProvider: FC<BoardContextProps> = (props) => {
         setEarthTrajectoryWidth,
         earthTrajectoryHeight,
         setEarthTrajectoryHeight,
+        initialNewMoonDate,
         sideralPeriodNumberOfDays,
         synodicPeriodNumberOfDays,
         theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun,
