@@ -1,0 +1,21 @@
+{
+    "hello": "Salut",
+    "howAreYou": "Comment allez-vous?",
+    "welcomeToTheGame": "bienvenue dans le jeu",
+    "selectTheLannguageYouLike": "sélectionnez la langue souhaitée:",
+
+    "english": "Anglais",
+    "french": "Français",
+    "hebrew": "Hébreu",
+    "serbian": "serbe",
+
+    "input_x": "entrée x",
+    "input_y": "entrée y",
+    "earthAngle": "Angle de la Terre",
+    "coordinates": "coordonnées",
+    "setTheAngleOfTheEarth": "Définir l'angle de la Terre",
+    "deg": "deg",
+    "setTheWidthOfEarthTrajectory": "Définir la largeur de la trajectoire de la Terre",
+    "setTheHeightOfEarthTrajectory": "Définir la hauteur de la trajectoire de la Terre",
+    "earthAngleTowardsTheSun": "Angle de la Terre vers le Soleil"
+}

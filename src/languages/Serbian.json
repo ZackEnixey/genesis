@@ -1,0 +1,21 @@
+{
+    "hello": "Zdravo",
+    "howAreYou": "Kako ste?",
+    "welcomeToTheGame": "Dobrodosli u igricu",
+    "selectTheLannguageYouLike": "Izaberite jezik koji zelite:",
+
+    "english": "engleski",
+    "french": "francuski",
+    "hebrew": "hebrejski",
+    "serbian": "srpski",
+
+    "input_x": "input x",
+    "input_y": "input y",
+    "earthAngle": "Ugao zemlje",
+    "coordinates": "koordinate",
+    "setTheAngleOfTheEarth": "Zadaj ugao zemlje u odnosu na sunce",
+    "deg": "step",
+    "setTheWidthOfEarthTrajectory": "Zadaj sirinu trajektorije Zemlje",
+    "setTheHeightOfEarthTrajectory": "Zadaj visinu trajektorije Zemlje",
+    "earthAngleTowardsTheSun": "Ugao Zemlje u odnosu na Sunce"
+}

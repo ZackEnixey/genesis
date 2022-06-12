@@ -1,0 +1,39 @@
+.solar_system_wrapper {
+    border: 1px solid white;
+    width: 70vh;
+    height: 70vh;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .sun_picture {
+        width: 30vh;
+    }
+
+    .moon_picture {
+        width: 5vh;
+        position: absolute;
+        top: -5vh;
+        left: 5vh;
+    }
+}
+
+.solar_system_wrapper_test {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    overflow: hidden; 
+    
+    .sun_image {
+        width: 20vh;
+        height: 20vh;
+        z-index: 1;
+    }
+}

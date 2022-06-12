@@ -1,0 +1,31 @@
+.moon_wrapper {
+    position: relative;
+    bottom: 14vh;
+    right: 14vh;
+    height: 28vh;
+    width: 28vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+
+    .moon_picture {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 5vh;
+        height: 5vh;
+        border-radius: 50%;
+    }
+
+    .moon_shadow {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 5vh;
+        height: 5vh;
+        border-radius: 50%;
+        transform: rotate(-40deg);
+        box-shadow: inset 4vh 3vh 1vh -2.5vh rgba(0, 0, 0, 0.8);
+    }
+}

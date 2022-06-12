@@ -1,0 +1,18 @@
+.earth_image_holder {
+    width: 1px;
+    height: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .earth_image {
+        width: 16vh;
+        height: 16vh;
+        // animation: earthRotatingAnimation 100s infinite linear;
+    }
+}
+
+// @keyframes earthRotatingAnimation {
+//     from {transform: rotate(360deg);}
+//     to {transform: rotate(0deg)}
+// }

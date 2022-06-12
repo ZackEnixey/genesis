@@ -1,0 +1,21 @@
+{
+    "hello": "שלום",
+    "howAreYou": "מה שלומך?",
+    "welcomeToTheGame": "ברוכים הבאים למשחק",
+    "selectTheLannguageYouLike": ":בחר את השפה שאתה רוצה",
+    
+    "english": "אנגלית",
+    "french": "צָרְפָתִית",
+    "hebrew": "עִברִית",
+    "serbian": "סרבית",
+
+    "input_x": "x קלט",
+    "input_y": "y קלט",
+    "earthAngle": "זווית כדור הארץ",
+    "coordinates": "קואורדינטות",
+    "setTheAngleOfTheEarth": "קבע את זווית כדור הארץ",
+    "deg": "דג",
+    "setTheWidthOfEarthTrajectory": "קבע את רוחב מסלול כדור הארץ",
+    "setTheHeightOfEarthTrajectory": "קבע את גובה מסלול כדור הארץ",
+    "earthAngleTowardsTheSun": "זווית כדור הארץ לכיוון השמש"
+}
