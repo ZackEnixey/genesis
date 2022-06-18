@@ -14,9 +14,6 @@ interface IBoardContext {
     earthAngleToSun: number, 
     setEarthAngleToSun(earthAngleToSun: number): void;
 
-    language: string; 
-    setLanguage(Language: string): void;
-
     earthTrajectoryWidth: number; 
     setEarthTrajectoryWidth(earthTrajectoryWidth: number): void;
     earthTrajectoryHeight: number; 
@@ -50,8 +47,6 @@ const BoardContextProvider: FC<BoardContextProps> = (props) => {
     const [coordinates, setCoordinates] = useState<ICoordinates>({ x: 0, y:0 });
     const [earthAngleToSun, setEarthAngleToSun] = useState<number>(360);
     
-    const [language, setLanguage] = useState<string>("en");
-    
     const [earthTrajectoryWidth, setEarthTrajectoryWidth] = useState<number>(60);
     const [earthTrajectoryHeight, setEarthTrajectoryHeight] = useState<number>(60);
 
@@ -75,8 +70,6 @@ const BoardContextProvider: FC<BoardContextProps> = (props) => {
         setCoordinates,
         earthAngleToSun, 
         setEarthAngleToSun,
-        language, 
-        setLanguage,
         earthTrajectoryWidth,
         setEarthTrajectoryWidth,
         earthTrajectoryHeight,

@@ -1,18 +1,16 @@
 import { useContext } from "react";
+import { useTranslation } from "react-i18next";
 import { BoardContext, TestContext } from "../../context";
-import text from "../language/checkLanguageInput";
 import AdjustEarthToSunAngle from "./AdjustEarthToSunAngle";
 import DatePickerComponent from "./datePicker/DatePickerComponent";
 
 const Sidebar = () => {
     const {
-        language,
         dayNumber,
         earthTrajectoryWidth, 
         setEarthTrajectoryWidth, 
         earthTrajectoryHeight, 
-        setEarthTrajectoryHeight, 
-        earthAngleToSun,
+        setEarthTrajectoryHeight,
         sideralPeriodNumberOfDays,
         synodicPeriodNumberOfDays,
         theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun,
@@ -20,6 +18,7 @@ const Sidebar = () => {
         theNumberOfDegreesTheMoonMovesEachDayAccordingToOurEyes
     } = useContext(BoardContext);
     const { isTestMode } = useContext(TestContext);
+    const { t } = useTranslation();
 
     const theMoonShiftDeegreesAccordintToTheNumberOfDays: number = dayNumber * theNumberOfDegreesTheMoonMovesEachDayComparedToTheEarth
 
@@ -35,7 +34,7 @@ const Sidebar = () => {
                     {`===========================`}
                     
                     <div style={{width: "300px"}}>
-                        {text("setTheWidthOfEarthTrajectory", language)}: 
+                        {t("setTheWidthOfEarthTrajectory")}: 
                         <input 
                             id="typeinp" 
                             type="range" 
@@ -48,7 +47,7 @@ const Sidebar = () => {
                     </div>
                     
                     <div style={{width: "300px"}}>
-                        {text("setTheHeightOfEarthTrajectory", language)}: 
+                        {t("setTheHeightOfEarthTrajectory")}: 
                         <input 
                             id="typeinp" 
                             type="range" 

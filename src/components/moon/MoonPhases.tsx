@@ -50,7 +50,7 @@ const MoonPhases = () => {
 
         const difference = date1.getTime() - date2.getTime();
 
-        var numberOfDaysBetweenTwoDates = Math.ceil(difference / (1000 * 3600 * 24));
+        var numberOfDaysBetweenTwoDates = Math.ceil(difference / (1000 * 3600 * 24)) - 1;
         console.log(numberOfDaysBetweenTwoDates);
         setDayNumber(numberOfDaysBetweenTwoDates);
         setEarthAngleToSun(numberOfDaysBetweenTwoDates*theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun);

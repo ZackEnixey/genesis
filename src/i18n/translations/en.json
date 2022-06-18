@@ -1,0 +1,23 @@
+{
+    "common": {
+        "hello": "Hello",
+        "howAreYou": "How are you?",
+        "welcomeToTheGame": "Wecome to the game",
+        "selectTheLannguageYouLike": "select the language you would like:",
+        
+        "english": "English",
+        "french": "French",
+        "hebrew": "Hebrew",
+        "serbian": "Serbian",
+
+        "input_x": "input x",
+        "input_y": "input y",
+        "earthAngle": "Earth Angle",
+        "coordinates": "coordinates",
+        "setTheAngleOfTheEarth": "Days since the initial day",
+        "deg": "deg",
+        "setTheWidthOfEarthTrajectory": "Set  asdfthe width of Earth's trajectory",
+        "setTheHeightOfEarthTrajectory": "Set the height of Earth's trajectory",
+        "earthAngleTowardsTheSun": "Earth angle towards the Sun"
+    }
+}

@@ -1,38 +1,36 @@
-import { useContext } from "react";
-import { BoardContext } from "../../context";
-import text from "./checkLanguageInput";
+import { useTranslation } from "react-i18next";
 
 import america from "../../assets/flags/america.png";
 import france from "../../assets/flags/france.png";
 import israel from "../../assets/flags/israel.png";
 import serbia from "../../assets/flags/serbia.png";
 
-import en from "../../languages/English.json";
-import fr from "../../languages/French.json";
-import he from "../../languages/Hebrew.json";
-import sr from "../../languages/Serbian.json";
 
 const Language = () => {
-    const { language, setLanguage } = useContext(BoardContext);
+    const { t, i18n } = useTranslation();
+
+    const setLanguage = (selectedLanguageAbbrevation: string) => {
+        i18n.changeLanguage(selectedLanguageAbbrevation);
+    }
 
     return (
         <div className="language_wrapper"> 
-            <div> {text("selectTheLannguageYouLike", language)} </div>
+            <div> {t("selectTheLannguageYouLike")} </div>
             <div className="language_item" onClick={() => setLanguage("en")}>
                 <img src={america} alt="english" className="language_flag" />
-                En. {text("english", language)}
+                En. {t("english")}
             </div>
             <div className="language_item" onClick={() => setLanguage("fr")}>
                 <img src={france} alt="english" className="language_flag" />
-                Fr. {text("french", language)}
+                Fr. {t("french")}
             </div>
             <div className="language_item" onClick={() => setLanguage("he")}>
                 <img src={israel} alt="english" className="language_flag" />
-                He. {text("hebrew", language)}
+                He. {t("hebrew")}
             </div>
             <div className="language_item" onClick={() => setLanguage("sr")}>
                 <img src={serbia} alt="english" className="language_flag" />
-                Sr. {text("serbian", language)}
+                Sr. {t("serbian")}
             </div>
         </div>
     )

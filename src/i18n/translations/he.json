@@ -1,0 +1,23 @@
+{
+    "common": {
+        "hello": "שלום",
+        "howAreYou": "מה שלומך?",
+        "welcomeToTheGame": "ברוכים הבאים למשחק.",
+        "selectTheLannguageYouLike": "בחר את השפה שאתה רוצה:",
+        
+        "english": "אנגלית",
+        "french": "צָרְפָתִית",
+        "hebrew": "עִברִית",
+        "serbian": "סרבית",
+
+        "input_x": "קלט x",
+        "input_y": "קלט y",
+        "earthAngle": "Earth Angle",
+        "coordinates": "coordinates",
+        "setTheAngleOfTheEarth": "ימים מהיום הראשונ",
+        "deg": "deg",
+        "setTheWidthOfEarthTrajectory": "Set  asdfthe width of Earth's trajectory",
+        "setTheHeightOfEarthTrajectory": "Set the height of Earth's trajectory",
+        "earthAngleTowardsTheSun": "Earth angle towards the Sun"
+    }
+}

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { SolarSystem, Sidebar, Language, MoonPhases } from "../";
+import { SolarSystem, Sidebar, MoonPhases, Language } from "../";
 import { TestContext } from "../../context";
 import TestSideralVsSynodic from "../solarSystem/TestSideralVsSynodic";
 

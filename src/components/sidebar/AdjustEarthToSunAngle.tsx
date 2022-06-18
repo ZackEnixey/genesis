@@ -1,17 +1,16 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext } from "react";
+import { useTranslation } from "react-i18next";
 import { BoardContext } from "../../context";
-import text from "../language/checkLanguageInput";
 
 const AdjustEarthToSunAngle = () => {
     const {
         dayNumber,
         setDayNumber,
-        language,
         earthAngleToSun, 
         setEarthAngleToSun,
         theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun
     } = useContext(BoardContext);
-    
+    const { t } = useTranslation();    
     
     const transferInputValueToEarthToSunDegrees = (event: React.ChangeEvent<HTMLInputElement>) => {
         const enteredValue: number = parseInt(event.target.value) || 0;
@@ -21,7 +20,7 @@ const AdjustEarthToSunAngle = () => {
 
     return (
         <div className="adjust_earth_to_sun_angle_wrapper">
-            {text("setTheAngleOfTheEarth", language)}:
+            {t("setTheAngleOfTheEarth")}:
             <input 
                 type="number" 
                 name="clicks" 
@@ -29,7 +28,7 @@ const AdjustEarthToSunAngle = () => {
                 onChange={ (event: React.ChangeEvent<HTMLInputElement>) => transferInputValueToEarthToSunDegrees(event) } 
                 style={{width: "100px", height: "50px", fontSize: "30px"}}
             /> 
-            <div> {text("earthAngleTowardsTheSun", language)} : {earthAngleToSun} {text("deg", language)} </div>
+            <div> {t("earthAngleTowardsTheSun")} : {earthAngleToSun} {t("deg")} </div>
         </div>
     )
 }
