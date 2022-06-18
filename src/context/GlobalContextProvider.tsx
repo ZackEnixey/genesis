@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { BoardContextProvider } from "./BoardContext";
+import { TestContextProvider } from "./TestContext";
 
 interface GlobalContextProps {
   children: React.ReactNode;
@@ -8,7 +9,9 @@ interface GlobalContextProps {
 const GlobalContextProvider: FC<GlobalContextProps> = (props) => {
     return (
         <BoardContextProvider>
-                {props.children}
+			<TestContextProvider>
+				{props.children}
+			</TestContextProvider>
         </BoardContextProvider>
     );
 };

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { BoardContext } from "../../context";
+import { BoardContext, TestContext } from "../../context";
 
 const TestSideralVsSynodic = () => {
     const { 
@@ -8,6 +8,7 @@ const TestSideralVsSynodic = () => {
         theNumberOfDegreesTheMoonMovesEachDayComparedToTheEarth,
         theNumberOfDegreesTheMoonMovesEachDayAccordingToOurEyes 
     } = useContext(BoardContext);
+    const { isTestMode } = useContext(TestContext);
     const days: number[] = Array.from(Array(600).keys());
 
     const sideral = (day: number) => {
@@ -26,8 +27,10 @@ const TestSideralVsSynodic = () => {
         return <div style={{width: "200px"}}>{theNumberOfDegreesTheMoonMovesEachDayAccordingToOurEyes*day}</div>;
     }
 
+    if (!isTestMode) return null;
+
     return (
-        <div className="" style={{overflow: "scroll", position: "absolute", right: 10, top: 0, textAlign: "left", color: "white", height: "800px", width: "500px"}}>
+        <div className="" style={{overflow: "scroll", transition: "1s", position: "absolute", right: 10, top: 0, textAlign: "left", color: "white", height: "800px", width: "500px"}}>
             
             ............. sideral: {sideralPeriodNumberOfDays} ............... synodic: {synodicPeriodNumberOfDays}
             {days.map( (day: number) => {
