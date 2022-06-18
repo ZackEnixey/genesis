@@ -30,6 +30,12 @@ interface IBoardContext {
     theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun: number;
     theNumberOfDegreesTheMoonMovesEachDayComparedToTheEarth: number;
     theNumberOfDegreesTheMoonMovesEachDayAccordingToOurEyes: number;
+
+    selectedDateFromDatePicker: Date; 
+    setSelectedDateFromDatePicker(selectedDateFromDatePicker: Date): void;
+
+    numberOfDaysBetweenTwoDates: number;
+    setNumberOfDaysBetweenTwoDates(numberOfDaysBetweenTwoDates: number): void;
 };
 
 const BoardContext = createContext({} as IBoardContext);
@@ -47,7 +53,7 @@ const BoardContextProvider: FC<BoardContextProps> = (props) => {
     const [language, setLanguage] = useState<string>("en");
     
     const [earthTrajectoryWidth, setEarthTrajectoryWidth] = useState<number>(60);
-    const [earthTrajectoryHeight, setEarthTrajectoryHeight] = useState<number>(40);
+    const [earthTrajectoryHeight, setEarthTrajectoryHeight] = useState<number>(60);
 
     const initialNewMoonDate: Date = new Date("June 29, 2022 04:52:00");
 
@@ -59,6 +65,8 @@ const BoardContextProvider: FC<BoardContextProps> = (props) => {
     const theNumberOfDegreesTheMoonMovesEachDayComparedToTheEarth: number = 13.1764227;    // 360 degrees / 27days 7 hours 43min = 360 degrees / 27.3215278 days
     const theNumberOfDegreesTheMoonMovesEachDayAccordingToOurEyes: number = 12.1907495911; // 360 degrees / 29.53058770576 days
     
+    const [selectedDateFromDatePicker, setSelectedDateFromDatePicker] = useState<Date>(new Date());
+    const [numberOfDaysBetweenTwoDates, setNumberOfDaysBetweenTwoDates] = useState<number>(0);
     
     const providerValue = {
         dayNumber,
@@ -78,7 +86,11 @@ const BoardContextProvider: FC<BoardContextProps> = (props) => {
         synodicPeriodNumberOfDays,
         theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun,
         theNumberOfDegreesTheMoonMovesEachDayComparedToTheEarth,
-        theNumberOfDegreesTheMoonMovesEachDayAccordingToOurEyes
+        theNumberOfDegreesTheMoonMovesEachDayAccordingToOurEyes,
+        selectedDateFromDatePicker, 
+        setSelectedDateFromDatePicker,
+        numberOfDaysBetweenTwoDates,
+        setNumberOfDaysBetweenTwoDates
     };
 
     return (

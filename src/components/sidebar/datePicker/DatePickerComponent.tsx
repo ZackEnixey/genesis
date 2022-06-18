@@ -1,22 +1,21 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { BoardContext } from "../../../context";
 
 const DatePickerComponent = () => {
-    const [selectedDate, setSelectedDate] = useState<Date>(new Date());
-
-    const processSelectedDate = (date: Date) => {
-        setSelectedDate(date);
-        console.log(date);
+    const { selectedDateFromDatePicker, setSelectedDateFromDatePicker } = useContext(BoardContext); 
+ 
+    const processselectedDateFromDatePicker = (date: Date) => {
+        setSelectedDateFromDatePicker(date);
     }
 
     return (
         <div>
             <DatePicker 
-                selected={selectedDate} 
-                onChange={(date: Date) => processSelectedDate(date)} 
+                selected={selectedDateFromDatePicker} 
+                onChange={(date: Date) => processselectedDateFromDatePicker(date)} 
                 dateFormat="dd/MM/yyyy"
-                filterDate={ (date: Date) => date.getDay() !== 6 && date.getDay() !== 0}
                 isClearable
                 showYearDropdown
                 scrollableMonthYearDropdown

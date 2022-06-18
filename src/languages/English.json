@@ -13,7 +13,7 @@
     "input_y": "input y",
     "earthAngle": "Earth Angle",
     "coordinates": "coordinates",
-    "setTheAngleOfTheEarth": "Set the day number",
+    "setTheAngleOfTheEarth": "Days since the initial day",
     "deg": "deg",
     "setTheWidthOfEarthTrajectory": "Set the width of Earth's trajectory",
     "setTheHeightOfEarthTrajectory": "Set the height of Earth's trajectory",
