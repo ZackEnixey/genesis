@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { SolarSystem, Sidebar, MoonPhases, Language } from "../";
+import { SolarSystem, Sidebar, MoonPhases, Language, DownloadPDF } from "../";
 import { TestContext } from "../../context";
 import TestSideralVsSynodic from "../solarSystem/TestSideralVsSynodic";
 
@@ -15,6 +15,7 @@ const Board = () => {
             <TestSideralVsSynodic />
             <Language />
             <MoonPhases />
+            <DownloadPDF />
         </div>
     )
 }
