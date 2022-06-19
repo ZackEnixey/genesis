@@ -18,6 +18,8 @@ const DatePickerComponent = () => {
                 dateFormat="dd/MM/yyyy"
                 isClearable
                 showYearDropdown
+                yearDropdownItemNumber={500}
+                scrollableYearDropdown
                 scrollableMonthYearDropdown
                 />
         </div>
