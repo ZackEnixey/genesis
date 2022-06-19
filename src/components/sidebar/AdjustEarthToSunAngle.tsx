@@ -4,8 +4,8 @@ import { BoardContext } from "../../context";
 
 const AdjustEarthToSunAngle = () => {
     const {
-        dayNumber,
-        setDayNumber,
+        simulationNumberOfDays,
+        setSimulationNumberOfDays,
         earthAngleToSun, 
         setEarthAngleToSun,
         theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun
@@ -14,7 +14,7 @@ const AdjustEarthToSunAngle = () => {
     
     const transferInputValueToEarthToSunDegrees = (event: React.ChangeEvent<HTMLInputElement>) => {
         const enteredValue: number = parseInt(event.target.value) || 0;
-        setDayNumber(enteredValue);
+        setSimulationNumberOfDays(enteredValue);
         setEarthAngleToSun(enteredValue*theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun);
     }
 
@@ -24,7 +24,7 @@ const AdjustEarthToSunAngle = () => {
             <input 
                 type="number" 
                 name="clicks" 
-                value={dayNumber} 
+                value={simulationNumberOfDays} 
                 onChange={ (event: React.ChangeEvent<HTMLInputElement>) => transferInputValueToEarthToSunDegrees(event) } 
                 style={{width: "100px", height: "50px", fontSize: "30px"}}
             /> 

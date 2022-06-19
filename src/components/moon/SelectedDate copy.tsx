@@ -8,11 +8,9 @@ const SelectedDate = () => {
         selectedDateFromDatePicker,
         setSimulationNumberOfDays,
         setEarthAngleToSun,
-        theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun,
-        isGeorgianCallendar
+        theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun
     } = useContext(BoardContext);
     const [currentDate, setCurrentDate] = useState<string>("Wed, 13 July 2022 07:15:00 GMT");
-    const [currentHebrewDate, setCurrentHebrewDate] = useState<string>("Tue Feb 11 2020 20:47:28 GMT+0100 (Central European Standard Time)");
 
     useEffect( () => {
         addDaysToInitialDate(simulationNumberOfDays)
@@ -33,11 +31,9 @@ const SelectedDate = () => {
     }
 
     const dateToUtcString = () : string => {
-        let hebrewDate: string = new Intl.DateTimeFormat('he-u-ca-hebrew',{weekday: 'long', year:'numeric', month:'numeric', day:'numeric'}).format(selectedDateFromDatePicker)
         var result = new Date(selectedDateFromDatePicker);
-        let georgianDate: any = result.setDate(result.getDate());
-        console.log({hebrewDate, result}, typeof georgianDate);
-        return georgianDate;
+        result.setDate(result.getDate());
+        return result.toUTCString()
     }
 
     const dateToUtcStringCounterFromInitialDay = (additionalDays: number) : string => {
@@ -57,19 +53,7 @@ const SelectedDate = () => {
         setEarthAngleToSun(numberOfDaysBetweenTwoDates*theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun);
     }
 
-    console.log("**  ", selectedDateFromDatePicker);
-    console.log("--  ", new Intl.DateTimeFormat('en-u-ca-hebrew',{dateStyle:"full"}).format(selectedDateFromDatePicker));
-    console.log("&&  ", new Intl.DateTimeFormat('he-u-ca-hebrew',{weekday: 'long', year:'numeric', month:'numeric', day:'numeric'}).format(selectedDateFromDatePicker));
-
-    const georginaDate = () => {
-        return <div className="current_date"> {currentDate} </div>;
-    }
-
-    const hebrewDate = () => {
-        return <div className="current_date">  as fasdf asd{currentDate} </div>;
-    }
-
-    return isGeorgianCallendar ? georginaDate() : hebrewDate();
+    return <div className="current_date"> {currentDate} </div>
 } 
 
 export default SelectedDate;

@@ -6,9 +6,9 @@ interface ICoordinates {
 }
 
 interface IBoardContext {
-    dayNumber: number;
+    simulationNumberOfDays: number;
 
-    setDayNumber(dayNumber: number): void;
+    setSimulationNumberOfDays(simulationNumberOfDays: number): void;
     coordinates: ICoordinates;
     setCoordinates(coordinates: ICoordinates): void;
     earthAngleToSun: number, 
@@ -33,6 +33,9 @@ interface IBoardContext {
 
     numberOfDaysBetweenTwoDates: number;
     setNumberOfDaysBetweenTwoDates(numberOfDaysBetweenTwoDates: number): void;
+
+    isGeorgianCallendar: boolean;
+    setIsGeorgianCallendar(isGeorgianCallendar: boolean): void;
 };
 
 const BoardContext = createContext({} as IBoardContext);
@@ -42,7 +45,7 @@ interface BoardContextProps {
 };
 
 const BoardContextProvider: FC<BoardContextProps> = (props) => {
-    const [dayNumber, setDayNumber] = useState<number>(0);
+    const [simulationNumberOfDays, setSimulationNumberOfDays] = useState<number>(0);
 
     const [coordinates, setCoordinates] = useState<ICoordinates>({ x: 0, y:0 });
     const [earthAngleToSun, setEarthAngleToSun] = useState<number>(360);
@@ -62,10 +65,12 @@ const BoardContextProvider: FC<BoardContextProps> = (props) => {
     
     const [selectedDateFromDatePicker, setSelectedDateFromDatePicker] = useState<Date>(new Date());
     const [numberOfDaysBetweenTwoDates, setNumberOfDaysBetweenTwoDates] = useState<number>(0);
+
+    const [isGeorgianCallendar, setIsGeorgianCallendar] = useState<boolean>(true);
     
     const providerValue = {
-        dayNumber,
-        setDayNumber,
+        simulationNumberOfDays,
+        setSimulationNumberOfDays,
         coordinates, 
         setCoordinates,
         earthAngleToSun, 
@@ -83,7 +88,9 @@ const BoardContextProvider: FC<BoardContextProps> = (props) => {
         selectedDateFromDatePicker, 
         setSelectedDateFromDatePicker,
         numberOfDaysBetweenTwoDates,
-        setNumberOfDaysBetweenTwoDates
+        setNumberOfDaysBetweenTwoDates,
+        isGeorgianCallendar,
+        setIsGeorgianCallendar
     };
 
     return (

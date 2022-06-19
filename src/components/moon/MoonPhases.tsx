@@ -5,18 +5,17 @@ import SelectedDate from "./SelectedDate";
 
 const MoonPhases = () => {
     const { 
-        dayNumber, 
+        simulationNumberOfDays, 
         synodicPeriodNumberOfDays
     } = useContext(BoardContext);
     
-    const numberOfSynodicPeriod: number = Math.abs(dayNumber) / synodicPeriodNumberOfDays;
+    const numberOfSynodicPeriod: number = Math.abs(simulationNumberOfDays) / synodicPeriodNumberOfDays;
     const progressOfTheMoonMovementInSynodicPeriodInPercentage: number = numberOfSynodicPeriod - Math.floor(numberOfSynodicPeriod);
     const progressOfTheMoonMovementInSynodicPeriodInDays: number = synodicPeriodNumberOfDays * progressOfTheMoonMovementInSynodicPeriodInPercentage;
 
-    console.log({dayNumber, synodicPeriodNumberOfDays, progressOfTheMoonMovementInSynodicPeriodInPercentage, progressOfTheMoonMovementInSynodicPeriodInDays })
     const value: number = progressOfTheMoonMovementInSynodicPeriodInDays;
 
-    const shadowAcordingToDayNumber = () => {
+    const shadowAcordingTosimulationNumberOfDays = () => {
         if (value < 1    ) return {transform: "translateX(0vh)"}; // 1
         if (value >= 1 && value <  2 ) return {transform: "translateX(-2vh)"}; // 1
         if (value >= 2 && value <  3 ) return {transform: "translateX(-4vh)"}; // 2
@@ -65,7 +64,7 @@ const MoonPhases = () => {
             <img className="moon_picture" src={moonImg} alt="moon"  /> 
             <div className="moon_shadow_wrapper">
                 {/* <div className="moon_shadow"></div> */}
-                <div className="square" style={shadowAcordingToDayNumber()} ></div>
+                <div className="square" style={shadowAcordingTosimulationNumberOfDays()} ></div>
             </div>
         </div>
     )

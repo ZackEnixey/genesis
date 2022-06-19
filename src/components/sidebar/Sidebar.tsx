@@ -6,7 +6,7 @@ import DatePickerComponent from "./datePicker/DatePickerComponent";
 
 const Sidebar = () => {
     const {
-        dayNumber,
+        simulationNumberOfDays,
         earthTrajectoryWidth, 
         setEarthTrajectoryWidth, 
         earthTrajectoryHeight, 
@@ -20,7 +20,7 @@ const Sidebar = () => {
     const { isTestMode } = useContext(TestContext);
     const { t } = useTranslation();
 
-    const theMoonShiftDeegreesAccordintToTheNumberOfDays: number = dayNumber * theNumberOfDegreesTheMoonMovesEachDayComparedToTheEarth
+    const theMoonShiftDeegreesAccordintToTheNumberOfDays: number = simulationNumberOfDays * theNumberOfDegreesTheMoonMovesEachDayComparedToTheEarth
 
     return (
         <div className="sidebar_wrapper">
@@ -67,8 +67,8 @@ const Sidebar = () => {
                         <div> Current SIDERAL Moon-to-Earth angle: <b>{theMoonShiftDeegreesAccordintToTheNumberOfDays}</b> </div>
                     </div> 
 
-                    <p> sideral circle: {Math.abs(dayNumber*theNumberOfDegreesTheMoonMovesEachDayComparedToTheEarth)} </p>
-                    <p> synodic circle: {Math.abs(dayNumber*theNumberOfDegreesTheMoonMovesEachDayAccordingToOurEyes)} </p>
+                    <p> sideral circle: {Math.abs(simulationNumberOfDays*theNumberOfDegreesTheMoonMovesEachDayComparedToTheEarth)} </p>
+                    <p> synodic circle: {Math.abs(simulationNumberOfDays*theNumberOfDegreesTheMoonMovesEachDayAccordingToOurEyes)} </p>
                     
                     <div>
                         <b> SYNODIC PERIOD: </b> 

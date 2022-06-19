@@ -3,9 +3,9 @@ import moonImg from "../../assets/moonImg.png";
 import { BoardContext } from "../../context";
 
 const Moon = () => {
-    const { dayNumber, theNumberOfDegreesTheMoonMovesEachDayComparedToTheEarth, theNumberOfDegreesTheMoonMovesEachDayAccordingToOurEyes} = useContext(BoardContext);
+    const { simulationNumberOfDays, theNumberOfDegreesTheMoonMovesEachDayComparedToTheEarth, theNumberOfDegreesTheMoonMovesEachDayAccordingToOurEyes} = useContext(BoardContext);
     const angleCorrection: number = 135;
-    const theMoonShiftDeegreesAccordintToTheNumberOfDays: number = dayNumber * theNumberOfDegreesTheMoonMovesEachDayAccordingToOurEyes + angleCorrection;
+    const theMoonShiftDeegreesAccordintToTheNumberOfDays: number = simulationNumberOfDays * theNumberOfDegreesTheMoonMovesEachDayAccordingToOurEyes + angleCorrection;
 
     return (
         <div className="moon_wrapper" style={{transform: `rotate(${theMoonShiftDeegreesAccordintToTheNumberOfDays}deg)`}} >
