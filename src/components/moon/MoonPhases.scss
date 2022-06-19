@@ -55,7 +55,7 @@
 
     .current_synodic_day {
         position: absolute;
-        top: -50px;
+        top: -70px;
         left: 0;
         color: white;
     }
@@ -67,4 +67,11 @@
         color: white;
     }
     
+    .current_date_hebrew {
+        position: absolute;
+        top: -50px;
+        left: 0;
+        color: white;
+    }
+
 }
