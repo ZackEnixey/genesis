@@ -1,7 +1,7 @@
 const DownloadPDF = () => {
 
     return (
-        <div>
+        <div className="position_absolute">
             DownloadPDF
         </div>
     )
