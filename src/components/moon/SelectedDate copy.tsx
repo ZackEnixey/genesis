@@ -10,7 +10,7 @@ const SelectedDate = () => {
         setEarthAngleToSun,
         theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun
     } = useContext(BoardContext);
-    const [currentDate, setCurrentDate] = useState<string>("Wed, 13 July 2022 07:15:00 GMT");
+    const [currentDate, setCurrentDate] = useState<string>("Mon, 11 March 2022 07:15:00 GMT");
 
     useEffect( () => {
         addDaysToInitialDate(simulationNumberOfDays)
