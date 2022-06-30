@@ -1,11 +1,6 @@
-import { FC, useEffect } from "react";
 import earthImg from "../../assets/earthImg.png";
 
-interface IEarthRotatingAnimation {
-    angleInDegrees: number;
-}
-
-const EarthRotatingAnimation: FC<IEarthRotatingAnimation> = ({angleInDegrees}) => {
+const EarthRotatingAnimation = () => {
 
     return (
         <div className="earth_image_holder">

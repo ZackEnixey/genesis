@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { Rnd } from "react-rnd";
 import { Moon } from "..";
 
 import { BoardContext } from "../../context";
@@ -25,7 +24,7 @@ const EarthSystem = () => {
     return(
         <div className="earth_to_sun_circle_diameter" style={{transform: `rotate(${earthAngleToSun}deg)`, width: `${radius}vh`}} >
             <div className="wrapper_demo_xx" style={{transform: `rotate(-${earthAngleToSun}deg)`}} >
-                <EarthRotatingAnimation angleInDegrees={earthAngleToSun} />
+                <EarthRotatingAnimation />
             </div>
             <div className="earth_night_side"></div>
             <Moon />

@@ -13,7 +13,7 @@ const AdjustEarthToSunAngle = () => {
     const { t } = useTranslation();    
     
     const transferInputValueToEarthToSunDegrees = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const enteredValue: number = parseInt(event.target.value) - 3 || 0;
+        const enteredValue: number = parseInt(event.target.value) || 0;
         setSimulationNumberOfDays(enteredValue);
         setEarthAngleToSun(enteredValue*theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun);
     }

@@ -33,13 +33,13 @@ const HebrewDateInput = () => {
          var nYearInCycle
     
         nYearInCycle = nYearH % 19
-        return ( nYearInCycle ==  3 ||
-                 nYearInCycle ==  6 ||
-                 nYearInCycle ==  8 ||
-                 nYearInCycle == 11 ||
-                 nYearInCycle == 14 ||
-                 nYearInCycle == 17 ||
-                 nYearInCycle == 0)
+        return ( nYearInCycle ===  3 ||
+                 nYearInCycle ===  6 ||
+                 nYearInCycle ===  8 ||
+                 nYearInCycle === 11 ||
+                 nYearInCycle === 14 ||
+                 nYearInCycle === 17 ||
+                 nYearInCycle === 0)
       }
     
       function Tishrei1(nYearH: any) : any {
@@ -69,13 +69,13 @@ const HebrewDateInput = () => {
         nDayOfWeek = nDays % 7
     
         if (!IsLeapYear(nYearH) &&
-            nDayOfWeek == 3 &&
+            nDayOfWeek === 3 &&
             (nHours * 1080) + nChalakim >= (9 * 1080) + 204) {
           nDayOfWeek = 5
           nDays += 2
         }
         else if ( IsLeapYear(nYearH - 1) &&
-                  nDayOfWeek == 2 &&
+                  nDayOfWeek === 2 &&
                   (nHours * 1080) + nChalakim >= (15 * 1080) + 589 ) {
           nDayOfWeek = 3
           nDays += 1
@@ -88,9 +88,9 @@ const HebrewDateInput = () => {
             nDays += 1
           }
           
-          if (nDayOfWeek == 1 ||
-              nDayOfWeek == 4 ||
-              nDayOfWeek == 6) {
+          if (nDayOfWeek === 1 ||
+              nDayOfWeek === 4 ||
+              nDayOfWeek === 6) {
             nDayOfWeek += 1
             nDayOfWeek = nDayOfWeek % 7
             nDays += 1
@@ -126,29 +126,29 @@ const HebrewDateInput = () => {
         nLengthOfYear = LengthOfYear(nYearH)
     
     
-        bHaser = (nLengthOfYear == 353 || nLengthOfYear == 383)
-        bShalem = (nLengthOfYear == 355 || nLengthOfYear == 385)
+        bHaser = (nLengthOfYear === 353 || nLengthOfYear === 383)
+        bShalem = (nLengthOfYear === 355 || nLengthOfYear === 385)
 
         dGreg = Tishrei1(nYearH)
     
         for (nMonth = 1; nMonth <= nMonthH - 1; nMonth ++) {
-          if (nMonth == 1 ||
-              nMonth == 5 ||
-              nMonth == 8 ||
-              nMonth == 10 ||
-              nMonth == 12 ) {
+          if (nMonth === 1 ||
+              nMonth === 5 ||
+              nMonth === 8 ||
+              nMonth === 10 ||
+              nMonth === 12 ) {
             nMonthLen = 30
-          } else if (nMonth == 4 ||
-                     nMonth == 7 ||
-                     nMonth == 9 ||
-                     nMonth == 11 ||
-                     nMonth == 13 ) {
+          } else if (nMonth === 4 ||
+                     nMonth === 7 ||
+                     nMonth === 9 ||
+                     nMonth === 11 ||
+                     nMonth === 13 ) {
               nMonthLen = 29
-          } else if (nMonth == 6) {
+          } else if (nMonth === 6) {
               nMonthLen = (bLeap ? 30 : 0)
-          } else if (nMonth == 2) {
+          } else if (nMonth === 2) {
               nMonthLen = (bShalem ? 30 : 29)
-          } else if (nMonth == 3) {
+          } else if (nMonth === 3) {
               nMonthLen = (bHaser ? 29 : 30 )
           }
           dGreg.setDate(dGreg.getDate() + nMonthLen)
@@ -209,8 +209,8 @@ const HebrewDateInput = () => {
           nDays = Math.round(nDays)
 
           nLengthOfYear = LengthOfYear(nYearH)
-          bHaser = nLengthOfYear == 353 || nLengthOfYear == 383
-          bShalem = nLengthOfYear == 355 || nLengthOfYear == 385
+          bHaser = nLengthOfYear === 353 || nLengthOfYear === 383
+          bShalem = nLengthOfYear === 355 || nLengthOfYear === 385
           bLeap = IsLeapYear(nYearH)
     
           // Add nDays to Tishrei 1.
@@ -266,9 +266,9 @@ const HebrewDateInput = () => {
       }
     
       function SameDate(d1: any, d2: any) {
-        return (d1.getFullYear() == d2.getFullYear() && 
-                d1.getMonth() == d2.getMonth() && 
-                d1.getDate() == d2.getDate())
+        return (d1.getFullYear() === d2.getFullYear() && 
+                d1.getMonth() === d2.getMonth() && 
+                d1.getDate() === d2.getDate())
                  
       }
     

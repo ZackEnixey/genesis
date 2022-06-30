@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import moonImg from "../../assets/moonImg.png";
 import { BoardContext } from "../../context";
 import SelectedDate from "./SelectedDate";

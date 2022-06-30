@@ -1,4 +1,3 @@
-import { queryHelpers } from "@testing-library/react";
 import { useContext, useEffect, useState } from "react";
 import { BoardContext } from "../../context";
 import { convertGeorginaDateToHebrewDate, dateToUtcStringCounterFromInitialDay, getNumberOfDaysBetweenTwoDates } from "./helper/index";

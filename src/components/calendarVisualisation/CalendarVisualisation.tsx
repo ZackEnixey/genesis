@@ -11,20 +11,20 @@ const CalendarVisualisation = () => {
     const yearNumber: number = numberOfDaysAbs / numberOfDegreesInCircle;
     const leapYear: number = 4;
     const isLeapYear: boolean = Math.floor(yearNumber) % leapYear === 0;
-    let leapYearShift: number = 0;
     const numberOfDaysInAdar2: number = 29;
     const lunarErrorPerDayInDegrees: number = 0.03055555555;
-    const numberOfLeapYersTillThisDate: number = Math.floor(yearNumber/4);
-
-    console.log(Math.floor(yearNumber) % leapYear, isLeapYear ? "is leap" : "" );
-
-    if (isLeapYear) leapYearShift = leapYearShift + numberOfDaysInAdar2 * numberOfLeapYersTillThisDate;
+    const numberOfLeapYersTillThisDate: number = Math.floor(yearNumber/4) + 1; // + 1 so we would avoid it to be 0;
+    
+    console.log({numberOfLeapYersTillThisDate});
+    let leapYearShift: number =numberOfDaysInAdar2 * numberOfLeapYersTillThisDate;
+    console.log( {lunarErrorPerDayInDegrees, simulationNumberOfDays, leapYearShift} );
 
 
     const hebrewMonthErrorShift: number = lunarErrorPerDayInDegrees*simulationNumberOfDays + leapYearShift;
     return (
         <div className="calendar_visualisation_wrapper">
-            <img style={{transform: `rotate(${-hebrewMonthErrorShift}deg)`}} src={hebrewMonths} alt="english" className="calendar_visualisation_img" />
+            <div style={{position: "absolute", top: 0, left: "200px", color: "white"}}> year: {yearNumber}, {hebrewMonthErrorShift} = {lunarErrorPerDayInDegrees}*{simulationNumberOfDays}+{leapYearShift} </div> 
+            <img style={{transform: `rotate(${-0}deg)`}} src={hebrewMonths} alt="english" className="calendar_visualisation_img" />
             <img src={seasonsAndMonths} alt="english" className="calendar_visualisation_img" />
         </div>
     )
