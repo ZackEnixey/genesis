@@ -7,7 +7,7 @@ import checkIsLeapYear from "./checkIsLeapYear";
 const CalendarVisualisation = () => {
     const { simulationNumberOfDays, initialNewMoonDate } = useContext(BoardContext);
     const numberOfDaysInAdar2: number = 29;
-    const lunarErrorPerDayInDegrees: number = 0.02935555555;
+    const lunarErrorPerDayInDegrees: number = 0.02925555555;
     const numberOfLeapYersTillThisDate: number = checkIsLeapYear(simulationNumberOfDays, initialNewMoonDate).numberOfLeapYearsSince1940; // + 1 so we would avoid it to be 0;
     
     let leapYearShift: number = numberOfDaysInAdar2 * numberOfLeapYersTillThisDate;    

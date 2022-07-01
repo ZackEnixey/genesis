@@ -41,11 +41,26 @@ const checkIsLeapYear = (simulationNumberOfDays: number, initialNewMoonDate: Dat
         if ( remainderFullYear === 11 )
             return {isLeap: true, numberOfLeapYearsSince1940: numberOfLeapYearsSince1940+4}
         
+    if ( remainderFullYear === 12 )
+        return {isLeap: true, numberOfLeapYearsSince1940: numberOfLeapYearsSince1940+4}
+
+    if ( remainderFullYear === 13 )
+        return {isLeap: true, numberOfLeapYearsSince1940: numberOfLeapYearsSince1940+4}
+        
         if ( remainderFullYear === 14 )
             return {isLeap: true, numberOfLeapYearsSince1940: numberOfLeapYearsSince1940+5}
-        
+            
+    if ( remainderFullYear === 15 )
+        return {isLeap: true, numberOfLeapYearsSince1940: numberOfLeapYearsSince1940+5}
+
+    if ( remainderFullYear === 16 )
+        return {isLeap: true, numberOfLeapYearsSince1940: numberOfLeapYearsSince1940+5}
+
         if ( remainderFullYear === 17 )
             return {isLeap: true, numberOfLeapYearsSince1940: numberOfLeapYearsSince1940+6}
+
+    if ( remainderFullYear === 18 )
+        return {isLeap: true, numberOfLeapYearsSince1940: numberOfLeapYearsSince1940+6}
             
     return {isLeap: false, numberOfLeapYearsSince1940: numberOfLeapYearsSince1940}
 }
