@@ -59,7 +59,6 @@ const MoonPhases = () => {
     return (
         <div className="moon_phases_wrapper">
             <SelectedDate />
-            <div className="current_synodic_day"> {value} </div>
             <div className="vertical_rooler"></div>
             <img className="moon_picture" src={moonImg} alt="moon"  /> 
             <div className="moon_shadow_wrapper">

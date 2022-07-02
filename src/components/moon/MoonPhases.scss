@@ -53,25 +53,22 @@
         }
     }
 
-    .current_synodic_day {
-        position: absolute;
-        top: -70px;
-        left: 0;
-        color: white;
-    }
-
     .current_date {
         position: absolute;
-        top: -30px;
+        top: -40px;
         left: 0;
         color: white;
+        text-align: left;
+        font-weight: 600;
     }
     
     .current_date_hebrew {
         position: absolute;
-        top: -50px;
+        top: -70px;
         left: 0;
         color: white;
+        text-align: left;
+        font-weight: 600;
     }
 
 }

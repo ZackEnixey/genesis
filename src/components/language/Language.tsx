@@ -1,17 +1,22 @@
+import { useContext } from "react";
 import { useTranslation } from "react-i18next";
 
 import america from "../../assets/flags/america.png";
 import france from "../../assets/flags/france.png";
 import israel from "../../assets/flags/israel.png";
 import serbia from "../../assets/flags/serbia.png";
+import { TestContext } from "../../context";
 
 
 const Language = () => {
+    const { isTestMode } = useContext(TestContext);
     const { t, i18n } = useTranslation();
 
     const setLanguage = (selectedLanguageAbbrevation: string) => {
         i18n.changeLanguage(selectedLanguageAbbrevation);
     }
+
+    if (!isTestMode) return null;
 
     return (
         <div className="language_wrapper"> 

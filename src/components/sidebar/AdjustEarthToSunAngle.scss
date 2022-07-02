@@ -1,3 +1,13 @@
 .adjust_earth_to_sun_angle_wrapper {
     width: 300px;
+    padding-top: 30px;
+    position: relative;
+    top: 30px;
+
+    
+}
+
+
+input[type=number]::-webkit-inner-spin-button, ::-webkit-outer-spin-button{
+    opacity: 0.5;
 }

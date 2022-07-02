@@ -45,9 +45,14 @@ const SelectedDate = () => {
         setEarthAngleToSun(getNumberOfDaysBetweenTwoDates(initialNewMoonDate, selectedDateFromDatePicker)*theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun);
     }
 
+    const formatedDate = () => {
+        const theDate = new Date(currentDate);
+        return theDate.toDateString();
+    }
+
 
     const georginaDate = () => {
-        return <div className="current_date"> {currentDate} </div>;
+        return <div className="current_date"> {formatedDate()} </div>;
     }
 
     const hebrewDate = () => {

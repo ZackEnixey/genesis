@@ -28,7 +28,6 @@ const AdjustEarthToSunAngle = () => {
                 onChange={ (event: React.ChangeEvent<HTMLInputElement>) => transferInputValueToEarthToSunDegrees(event) } 
                 style={{width: "100px", height: "50px", fontSize: "30px"}}
             /> 
-            <div> {t("earthAngleTowardsTheSun")} : {earthAngleToSun} {t("deg")} </div>
         </div>
     )
 }
