@@ -12,7 +12,7 @@ const DatePickerComponent = () => {
     }
 
     return (
-        <div className="date_picker_wrapper" style={{position: "relative", top: "30px"}}>
+        <div className="date_picker_wrapper">
             <div> PICK GREGORIAN DATE: </div>
             <DatePicker 
                 selected={selectedDateFromDatePicker} 

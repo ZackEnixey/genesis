@@ -26,7 +26,6 @@ const HebrewDateInput2 = () => {
     const enterDayNumber = () => {
         return (
             <div style={{display: "flex", justifyContent: "right"}}>
-                <div> day: </div>
                 <input 
                     type="number" 
                     min="1"
@@ -40,8 +39,7 @@ const HebrewDateInput2 = () => {
 
     const enterMonthWord = () => {
         return (
-            <div style={{display: "flex", justifyContent: "right"}}>
-                <div> month: </div>
+            <div style={{display: "flex", justifyContent: "right", overflow: "visible"}}>
                 <select value={monthName} onChange={(event: any) => setMonthName(event.target.value)}>
                     <option value="Nisan">Nisan</option>
                     <option value="Iyyar">Iyyar</option>
@@ -65,7 +63,6 @@ const HebrewDateInput2 = () => {
     const enterYearNumber = () => {
         return (
             <div style={{display: "flex", justifyContent: "right"}}>
-                <div> year: </div>
                 <input 
                     type="number" 
                     min="1"
@@ -78,12 +75,18 @@ const HebrewDateInput2 = () => {
     }
 
     return (
-        <div className="hebrew_date_input_wrapper">
-            <div> PICK HEBREW DATE: </div>
-            {enterDayNumber()}
-            {enterMonthWord()}
-            {enterYearNumber()}
-            <button onClick={convertDate}> convert </button>
+        <div className="hebrew_date_input_wrapper font_size">
+
+            <div className="grid-container">
+                <div className="item1"> PICK HEBREW DATE: </div>
+                <div className="item2"> day </div>
+                <div className="item3"> month </div>  
+                <div className="item4"> year </div>
+                <div className="item5"> {enterDayNumber()} </div>
+                <div className="item6"> {enterMonthWord()} </div>
+                <div className="item7"> {enterYearNumber()} </div>
+                <div className="item8"> <button onClick={convertDate}> convert </button> </div>  
+            </div>            
         </div>
     )
 }

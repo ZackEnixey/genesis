@@ -1,10 +1,40 @@
 .hebrew_date_input_wrapper {
-    background-color: white;
     position: relative;
     top: 50px;
+
     width: 90%;
-    height: 130px;
-    color: black;
+    height: 30px;
+
+    color: white;
     text-align: right;
-    padding: 10px;
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 10px;
+    padding: 10px;
+
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .item1 {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 1;
+        grid-column-end: 5;
+        justify-content: left;
+    }
+      
+    .item8 {
+        grid-row-start: 2;
+        grid-row-end: 4;
+        grid-column-start: 4;
+        align-items: flex-end;
+    }
+}
+    
+  

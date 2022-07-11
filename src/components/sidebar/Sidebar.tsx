@@ -11,7 +11,7 @@ import TestComponent from "./TestComponent";
 const Sidebar = () => {
     const { isTestMode } = useContext(TestContext);
     const isHorizontal = useUiUxPosition();
-    const sidebarWrapperStyle = isHorizontal ? "sidebar_wrapper screen_font_style" : "sidebar_wrapper_narrow screen_font_style_narrow";
+    const sidebarWrapperStyle = isHorizontal ? "sidebar_wrapper font_size" : "sidebar_wrapper_narrow font_size";
     const sidebarStyle = isHorizontal ? "sidebar_wide_screen" : "sidebar_narrow_screen";
     
     return (

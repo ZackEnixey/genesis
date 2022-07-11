@@ -19,10 +19,14 @@
     
         .hiding_patch {
             width: 45px;
-            height: 51px;
+            height: 46px;
             background-color: black;
+            border: 2px solid white;
+            border-bottom-left-radius: 7px;
+            border-top-left-radius: 7px;
+            border-right: 0px;
             position: absolute;
-            top: -8px;
+            top: -7px;
         }
     }
 }

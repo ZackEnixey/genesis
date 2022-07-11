@@ -1,11 +1,3 @@
-.screen_font_style {
-    font-size: calc(15px + 0.390625vw);
-}
-
-.narrow_screen_font_style {
-    font-size: calc(15px + 0.390625vw);
-}
-
 .sidebar_wrapper {
     min-width: 220px;
     width: 20vw;
@@ -26,8 +18,8 @@
 }
 
 .sidebar_wrapper_narrow {
-    width: 30vw;
-    height: 30vw;
+    width: 30vh;
+    height: 30vh;
     
     padding: 10px;
     border: #ffffff 2px solid;
@@ -42,9 +34,10 @@
 
 .sidebar_wide_screen {
     position: absolute;
+    width: 250px;
 }
 
 .sidebar_narrow_screen {
     position: absolute;
-    display: flex;
+    width: 35vw;
 }
