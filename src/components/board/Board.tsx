@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { SolarSystem, Sidebar, MoonPhases, Language, DownloadPDF, CalendarVisualisation } from "../";
 import { BoardContext, TestContext } from "../../context";
+import ScreenPositioning from "./ScreenPositioning";
 
 const Board = () => {
     const { isGeorgianCallendar, setIsGeorgianCallendar } = useContext(BoardContext);
@@ -16,6 +17,7 @@ const Board = () => {
             <Language />
             <MoonPhases />
             <DownloadPDF />
+            <ScreenPositioning />
         </div>
     )
 }

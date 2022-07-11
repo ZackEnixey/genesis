@@ -2,10 +2,31 @@
     width: 300px;
     padding-top: 30px;
     position: relative;
-    top: 30px;
 
+    .increment_wrapper{
+        position: relative;
+        top: -10px;
+
+        .input_incrementer {
+            width: 15px;
+            height: 30px;
+            font-size: 30px;
+            transform: rotate(-90deg) scale(2);
+            position: absolute;
+            left: 30px;
+            top: 0;
+        }
     
+        .hiding_patch {
+            width: 45px;
+            height: 51px;
+            background-color: black;
+            position: absolute;
+            top: -8px;
+        }
+    }
 }
+
 
 
 input[type=number]::-webkit-inner-spin-button, ::-webkit-outer-spin-button{

@@ -1,6 +1,18 @@
+.screen_font_style {
+    font-size: calc(15px + 0.390625vw);
+}
+
+.narrow_screen_font_style {
+    font-size: calc(15px + 0.390625vw);
+}
+
 .sidebar_wrapper {
-    width: 300px;
-    height: 80vh;
+    min-width: 220px;
+    width: 20vw;
+
+    min-height: 400px;
+    height: 50vh;
+    
     margin: 10vh 10px;
     padding: 10px;
     border: #ffffff 2px solid;
@@ -11,4 +23,28 @@
 
     color: white;
     text-align: left;
+}
+
+.sidebar_wrapper_narrow {
+    width: 30vw;
+    height: 30vw;
+    
+    padding: 10px;
+    border: #ffffff 2px solid;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    color: white;
+    text-align: left;
+}
+
+.sidebar_wide_screen {
+    position: absolute;
+}
+
+.sidebar_narrow_screen {
+    position: absolute;
+    display: flex;
 }
