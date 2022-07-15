@@ -21,7 +21,7 @@ const EarthSystem = () => {
     const cosineSquare = Math.cos(angleInRadians)*Math.cos(angleInRadians);
     const equation_numerator = earthTrajectoryWidth*earthTrajectoryHeight;
     const equation_denominator = Math.sqrt(earthTrajectoryWidth * earthTrajectoryWidth * sineSquare + earthTrajectoryHeight * earthTrajectoryHeight * cosineSquare );
-    radius = isHorizontal ? Math.round(equation_numerator/equation_denominator)+"vh" : "72vw";
+    radius = Math.round(equation_numerator/equation_denominator)+"vh";
 
     const error: number = -35;
             
