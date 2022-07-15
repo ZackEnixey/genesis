@@ -1,5 +1,6 @@
 export enum PositionEnum {
-    HORIZONTAL = "HORIZONTAL",
-    VERTICAL = "VERTICAL",
+    BIG = "BIG",
+    MEDIUM = "MEDIUM",
+    SMALL = "SMALL",
 
 }

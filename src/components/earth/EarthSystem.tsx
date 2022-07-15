@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { Moon } from "..";
 
 import { BoardContext } from "../../context";
-import useUiUxPosition from "../customHooks/useUiUxPosition";
 import EarthRotatingAnimation from "./EarthRotatingAnimation";
 
 const EarthSystem = () => {
@@ -15,7 +14,6 @@ const EarthSystem = () => {
     let radius : string = "40";
     const theNumberOfDegreesInOneHalfOfCircle: number = 180;
     const angleInRadians = earthAngleToSun*Math.PI/theNumberOfDegreesInOneHalfOfCircle;
-    const isHorizontal = useUiUxPosition();
 
     const sineSquare = Math.sin(angleInRadians)*Math.sin(angleInRadians);
     const cosineSquare = Math.cos(angleInRadians)*Math.cos(angleInRadians);

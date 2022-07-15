@@ -25,3 +25,21 @@
     left: 3vh;
     background-image: url("../../assets/earthImg.png");
 }
+
+.solar_system_and_calendar_wrapper {
+    position: absolute;
+    width: 60vh;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.purple_filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(114, 7, 152, 0.349);
+}

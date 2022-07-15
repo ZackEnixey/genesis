@@ -18,8 +18,8 @@ const DatePickerComponent = () => {
 
     return (
         <div className="date_picker_wrapper" style={{position: "relative"}}>
-            <div> PICK GREGORIAN DATE: </div>
-            <DatePicker name="gregorian_date" onChange={processselectedDateFromDatePicker} />
+            <div className="large_title"> PICK GREGORIAN DATE: </div>
+            <DatePicker style={{width: "100%"}} name="gregorian_date" onChange={processselectedDateFromDatePicker} />
         </div>
     );
 

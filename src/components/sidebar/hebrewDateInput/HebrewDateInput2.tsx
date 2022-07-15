@@ -32,7 +32,7 @@ const HebrewDateInput2 = () => {
 
     const enterDayNumber = () => {
         return (
-            <Form.Item name="hebrewDay" label="Input" >
+            <Form.Item name="hebrewDay" label="day" >
                 <Input
                     type="number" 
                     min={1}
@@ -44,7 +44,7 @@ const HebrewDateInput2 = () => {
 
     const enterMonthWord = () => {
         return (
-            <Form.Item name="hebrewMonth" label="Select">
+            <Form.Item name="hebrewMonth" label="Month">
                 <Select>
                     <Select.Option value="Nisan"> Nisan </Select.Option>
                     <Select.Option value="Iyyar"> Iyyar </Select.Option>
@@ -67,7 +67,7 @@ const HebrewDateInput2 = () => {
 
     const enterYearNumber = () => {
         return (
-            <Form.Item name="hebrewYear" label="Input">
+            <Form.Item name="hebrewYear" label="Year">
                 <Input 
                     type="number"
                     min={1} 
@@ -78,11 +78,11 @@ const HebrewDateInput2 = () => {
     }
 
     return (
-        <div className="hebrew_date_input_wrapper font_size">
-
+        <div className="hebrew_date_input_wrapper">
+            <div className="large_title"> PICK HEBREW DATE: </div>
             <Form
-                labelCol={{span: 4}}
-                wrapperCol={{span: 14}}
+                labelCol={{span: 6}}
+                wrapperCol={{span: 16}}
                 layout="horizontal"
                 form={form}
             >
@@ -91,7 +91,7 @@ const HebrewDateInput2 = () => {
                 {enterYearNumber()}
 
                 <Form.Item label=" ">
-                    <Button onClick={() => convertDate()}> Submit data </Button>
+                    <Button onClick={() => convertDate()}> Submit </Button>
                 </Form.Item>
             </Form>
 

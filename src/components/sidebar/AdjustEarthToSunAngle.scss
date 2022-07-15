@@ -1,19 +1,26 @@
 .adjust_earth_to_sun_angle_wrapper {
-    width: 300px;
-    padding-top: 30px;
-    position: relative;
+    width: 70px;
+    height: 70px;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     .increment_wrapper{
         position: relative;
         top: -10px;
 
         .input_incrementer {
-            width: 15px;
+            width: 21px;
             height: 30px;
-            font-size: 30px;
+            font-size: 24px;
             transform: rotate(-90deg) scale(2);
             position: absolute;
-            left: 30px;
+            left: 29px;
             top: 0;
         }
     
@@ -26,7 +33,7 @@
             border-top-left-radius: 7px;
             border-right: 0px;
             position: absolute;
-            top: -7px;
+            top: -8px;
         }
     }
 }

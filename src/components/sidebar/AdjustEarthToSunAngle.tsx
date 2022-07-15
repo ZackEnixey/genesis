@@ -6,7 +6,6 @@ const AdjustEarthToSunAngle = () => {
     const {
         simulationNumberOfDays,
         setSimulationNumberOfDays,
-        earthAngleToSun, 
         setEarthAngleToSun,
         theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun
     } = useContext(BoardContext);

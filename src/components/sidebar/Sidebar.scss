@@ -1,13 +1,11 @@
-.sidebar_wrapper {
-    min-width: 220px;
-    width: 20vw;
-
-    min-height: 400px;
-    height: 50vh;
+.sidebar_wrapper_big {
+    width: 300px;
+    min-height: 420px;
+    height: 40vh;
     
-    margin: 10vh 10px;
+    margin: 25vh 10px;
     padding: 10px;
-    border: #ffffff 2px solid;
+    border: #cc7575 2px solid;
 
     position: absolute;
     left: 0;
@@ -17,7 +15,22 @@
     text-align: left;
 }
 
-.sidebar_wrapper_narrow {
+.sidebar_wrapper_medium {
+    width: 30vh;
+    height: 30vh;
+    
+    padding: 10px;
+    border: #ffffff 2px solid;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    color: white;
+    text-align: left;
+}
+
+.sidebar_wrapper_small {
     width: 30vh;
     height: 30vh;
     

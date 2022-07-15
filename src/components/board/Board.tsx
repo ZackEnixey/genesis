@@ -1,25 +1,28 @@
-import { useContext } from "react";
 import { SolarSystem, Sidebar, MoonPhases, Language, DownloadPDF, CalendarVisualisation } from "../";
-import { BoardContext, TestContext } from "../../context";
 import useUiUxPosition from "../customHooks/useUiUxPosition";
-import ScreenPositioning from "./ScreenPositioning";
+import AdjustEarthToSunAngle from "../sidebar/AdjustEarthToSunAngle";
 
 const Board = () => {
-    const { isGeorgianCallendar, setIsGeorgianCallendar } = useContext(BoardContext);
     const isHorizontal = useUiUxPosition();
-    const solarSystemPositionStyle: any = isHorizontal ? {position: "relative"} : {position: "absolute", top: 0};
+
+    const sidebarWrapperStyleDic = {
+        "BIG": "sidebar_wrapper_big",
+        "MEDIUM": "sidebar_wrapper_medium",
+        "SMALL": "sidebar_wrapper_small"
+    }
 
     return (
-        <div className="board_wrapper">           
-            <div style={solarSystemPositionStyle}>
+        <div className="board_wrapper">  
+            <div className="purple_filter"></div>
+            <div className="solar_system_and_calendar_wrapper">
                 <CalendarVisualisation />
                 <SolarSystem />
             </div>
-            <Sidebar />
             <Language />
+            <Sidebar />
             <MoonPhases />
             <DownloadPDF />
-            <ScreenPositioning />
+            <AdjustEarthToSunAngle />         
         </div>
     )
 }

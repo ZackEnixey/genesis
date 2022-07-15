@@ -22,8 +22,6 @@
 
 .solar_system_wrapper_test {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -52,7 +50,6 @@
     position: absolute;
     width: 100vw;
     height: 100vh;
-    background: rgba(114, 7, 152, 0.349);
     
     .earth_trajectory_surface {
         height: 200px;

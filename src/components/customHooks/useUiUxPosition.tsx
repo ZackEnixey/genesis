@@ -2,21 +2,27 @@ import { useEffect, useState } from 'react';
 import { PositionEnum } from '../../types';
 import useWindowDimensions from './useWindowDimensions';
 
-type TPosition = PositionEnum.HORIZONTAL | PositionEnum.VERTICAL;
+type TPosition = PositionEnum.BIG | PositionEnum.MEDIUM | PositionEnum.SMALL;
 
 export default function useUiUxPosition() {
   const { customWidth, customHeight } = useWindowDimensions();
-  const [isHorizontal, setIsHorizontal] = useState<boolean>(true);
-    const limitWidth: number = 900;
+  const [isHorizontal, setIsHorizontal] = useState<TPosition>(PositionEnum.BIG);
+    const limitWidthTop: number = 900;
+    const limitWidthBottom: number = 450;
     const limitHeight: number = 700;
-    const borderValue: number = limitWidth/limitHeight;
+    const borderValueTop: number = limitWidthTop/limitHeight;
+    const borderValueBottom: number = limitWidthBottom/limitHeight;
 
     const horizontalOrVertical = () => {
-        if (customWidth/customHeight > borderValue){
-          setIsHorizontal(true);
+        if (customWidth/customHeight > borderValueTop){
+          setIsHorizontal(PositionEnum.BIG);
           return;
         }
-        setIsHorizontal(false);
+        if (customWidth/customHeight < borderValueTop && customWidth/customHeight > borderValueBottom){
+          setIsHorizontal(PositionEnum.MEDIUM);
+          return;
+        }
+        setIsHorizontal(PositionEnum.SMALL);
     }  
     
     useEffect( () => {
