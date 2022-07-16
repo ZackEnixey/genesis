@@ -21,7 +21,7 @@ const Language = () => {
 
     return (
         <div className="language_wrapper" > 
-            <div className="cursor_pointer" onClick={() => setToggle(false)} > CLOSE </div>
+            <div className="cursor_pointer" onClick={() => setToggle(false)} > {t("closeText")} </div>
             <div> {t("selectTheLannguageYouLike")} </div>
 
             <div className="language_item" onClick={() => setLanguage("en")}>

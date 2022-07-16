@@ -30,3 +30,15 @@
 .hover_effect:hover {
     transform: scale(1.2);
 }
+
+.display_flex_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.display_flex_h_center_v_top {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}

@@ -7,10 +7,12 @@ import {
     Select,
    } from "antd";
 import { BoardContext } from "../../../context";
+import { useTranslation } from "react-i18next";
 
 const HebrewDateInput2 = () => {
     const { setSelectedDateFromDatePicker, setToggleSidebar } = useContext(BoardContext); 
     const [form] = Form.useForm();
+    const { t } = useTranslation();
     
     const convertDate = () => {
         setToggleSidebar(false)
@@ -34,34 +36,71 @@ const HebrewDateInput2 = () => {
 
     const enterDayNumber = () => {
         return (
-            <Form.Item name="hebrewDay" label="day" >
-                <Input
-                    type="number" 
-                    min={1}
-                    max={31}
-                />
+            // <Form.Item name="hebrewDay" label={<label style={{ color: "white" }}> {t("dayText")} </label>} >
+            //     <Input
+            //         type="number" 
+            //         min={1}
+            //         max={31}
+            //     />
+            // </Form.Item>
+
+            <Form.Item name="hebrewDay" label={<label style={{ color: "white" }}> {t("dayText")} </label>} >
+                <Select>
+                    <Select.Option value="1"> {t("1Text")} </Select.Option>
+                    <Select.Option value="2"> {t("2Text")} </Select.Option>
+                    <Select.Option value="3"> {t("3Text")} </Select.Option>
+                    <Select.Option value="4"> {t("4Text")} </Select.Option>
+                    <Select.Option value="5"> {t("5Text")}    </Select.Option>
+                    <Select.Option value="6"> {t("6Text")}   </Select.Option>
+                    <Select.Option value="7"> {t("7Text")} </Select.Option>
+                    <Select.Option value="8"> {t("8Text")} </Select.Option>
+                    <Select.Option value="9">  {t("9Text")}  </Select.Option>
+                    <Select.Option value="10"> {t("10Text")}  </Select.Option>
+                    <Select.Option value="11"> {t("11Text")} </Select.Option>
+                    <Select.Option value="12"> {t("12Text")}  </Select.Option>
+                    <Select.Option value="13"> {t("13Text")} </Select.Option>
+                    <Select.Option value="14"> {t("14Text")} </Select.Option>
+                    <Select.Option value="15"> {t("15Text")} </Select.Option>
+                    <Select.Option value="16"> {t("16Text")} </Select.Option>
+                    <Select.Option value="17"> {t("17Text")} </Select.Option>
+                    <Select.Option value="18"> {t("18Text")} </Select.Option>
+                    <Select.Option value="19"> {t("19Text")} </Select.Option>
+                    <Select.Option value="20"> {t("20Text")} </Select.Option>
+                    <Select.Option value="21"> {t("21Text")} </Select.Option>
+                    <Select.Option value="22"> {t("22Text")} </Select.Option>
+                    <Select.Option value="23"> {t("23Text")} </Select.Option>
+                    <Select.Option value="24"> {t("24Text")} </Select.Option>
+                    <Select.Option value="25"> {t("25Text")} </Select.Option>
+                    <Select.Option value="26"> {t("26Text")} </Select.Option>
+                    <Select.Option value="27"> {t("27Text")} </Select.Option>
+                    <Select.Option value="28"> {t("28Text")} </Select.Option>
+                    <Select.Option value="29"> {t("29Text")} </Select.Option>
+                    <Select.Option value="30"> {t("30Text")} </Select.Option>
+                </Select>
             </Form.Item>
+
+
         )
     }
 
     const enterMonthWord = () => {
         return (
-            <Form.Item name="hebrewMonth" label="Month">
+            <Form.Item name="hebrewMonth" label={<label style={{ color: "white" }}> {t("monthText")} </label>} >
                 <Select>
-                    <Select.Option value="Nisan"> Nisan </Select.Option>
-                    <Select.Option value="Iyyar"> Iyyar </Select.Option>
-                    <Select.Option value="Sivan"> Sivan </Select.Option>
-                    <Select.Option value="Tamuz"> Tamuz </Select.Option>
-                    <Select.Option value="Av">    Av    </Select.Option>
-                    <Select.Option value="Elul">  Elul   </Select.Option>
-                    <Select.Option value="Tishrei"> Tishrei </Select.Option>
-                    <Select.Option value="Cheshvan"> Cheshvan </Select.Option>
-                    <Select.Option value="Kislev">  Kislev  </Select.Option>
-                    <Select.Option value="Tevet"> Tevet  </Select.Option>
-                    <Select.Option value="Shvat"> Shvat </Select.Option>
-                    <Select.Option value="Adar">  Adar  </Select.Option>
-                    <Select.Option value="Adar1"> Adar1 </Select.Option>
-                    <Select.Option value="Adar2"> Adar2 </Select.Option>
+                    <Select.Option value="Nisan"> {t("NisanText")} </Select.Option>
+                    <Select.Option value="Iyyar"> {t("IyyarText")} </Select.Option>
+                    <Select.Option value="Sivan"> {t("SivanText")} </Select.Option>
+                    <Select.Option value="Tamuz"> {t("TamuzText")} </Select.Option>
+                    <Select.Option value="Av">    {t("AvText")}    </Select.Option>
+                    <Select.Option value="Elul">  {t("ElulText")}   </Select.Option>
+                    <Select.Option value="Tishrei"> {t("TishreiText")} </Select.Option>
+                    <Select.Option value="Cheshvan"> {t("CheshvanText")} </Select.Option>
+                    <Select.Option value="Kislev">  {t("KislevText")}  </Select.Option>
+                    <Select.Option value="Tevet"> {t("TevetText")}  </Select.Option>
+                    <Select.Option value="Shvat"> {t("ShvatText")} </Select.Option>
+                    <Select.Option value="Adar">  {t("AdarText")}  </Select.Option>
+                    <Select.Option value="Adar1"> {t("Adar1Text")} </Select.Option>
+                    <Select.Option value="Adar2"> {t("Adar2Text")} </Select.Option>
                 </Select>
             </Form.Item>
         )
@@ -69,7 +108,7 @@ const HebrewDateInput2 = () => {
 
     const enterYearNumber = () => {
         return (
-            <Form.Item name="hebrewYear" label="Year">
+            <Form.Item name="hebrewYear" label={<label style={{ color: "white" }}> {t("yearText")} </label>} >
                 <Input 
                     type="number"
                     min={1} 
@@ -81,7 +120,7 @@ const HebrewDateInput2 = () => {
 
     return (
         <div className="hebrew_date_input_wrapper">
-            <div className="large_title"> PICK HEBREW DATE: </div>
+            <div className="large_title"> {t("pickHebrewDateText")}: </div>
             <Form
                 labelCol={{span: 6}}
                 wrapperCol={{span: 16}}
@@ -93,7 +132,7 @@ const HebrewDateInput2 = () => {
                 {enterYearNumber()}
 
                 <Form.Item label=" ">
-                    <Button onClick={() => convertDate()}> Submit </Button>
+                    <Button onClick={() => convertDate()}> {t("submitText")} </Button>
                 </Form.Item>
             </Form>
 
