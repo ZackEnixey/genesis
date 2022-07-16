@@ -18,14 +18,20 @@
     position: absolute;
     bottom: 40vh;
     left: 10px;
-
-    width: 130px;
-    height: 50px;
     background: white;
-
+    
     display: flex;
     justify-content: center;
     align-items: center;
-
     cursor: pointer;
+}
+
+.width_big {
+    height: 50px;
+    width: 130px;
+}
+
+.width_small {
+    height: 130px;
+    width: 50px;
 }

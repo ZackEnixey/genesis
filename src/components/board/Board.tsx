@@ -15,7 +15,23 @@ const Board = () => {
         "SMALL": "solar_system_small_position"
     }
 
-    if (isHorizontal === PositionEnum.MEDIUM || isHorizontal === PositionEnum.SMALL) 
+    if (isHorizontal === PositionEnum.SMALL) 
+        return (
+            <div className="board_wrapper">  
+                <div className="purple_filter"></div>
+                <div className={`solar_system_and_calendar_wrapper_small ${sidebarWrapperStyleDic[isHorizontal]} `}>
+                    <CalendarVisualisation />
+                    <SolarSystem />
+                </div>
+                <Language />
+                <PopUpSidebar />
+                <MoonPhases />
+                <AdjustEarthToSunAngle />         
+                {toggleSidebar && <Sidebar />}
+            </div>
+        )
+
+    if (isHorizontal === PositionEnum.MEDIUM) 
         return (
             <div className="board_wrapper">  
                 <div className="purple_filter"></div>

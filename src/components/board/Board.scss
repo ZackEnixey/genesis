@@ -35,12 +35,21 @@
     align-items: center;
 }
 
+.solar_system_and_calendar_wrapper_small {
+    position: absolute;
+    width: 90vw;
+    height: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .solar_system_medium_position {
     top: 100px;
 }
 
 .solar_system_small_position {
-    top: calc(-5vh + 5vw);
+    top: 6vw;
 }
 
 .purple_filter {
