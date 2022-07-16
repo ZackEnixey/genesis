@@ -8,9 +8,11 @@ import {
    } from "antd";
 import { BoardContext } from "../../../context";
 import { useTranslation } from "react-i18next";
+import useUiUxPosition from "../../customHooks/useUiUxPosition";
 
 const HebrewDateInput2 = () => {
     const { setSelectedDateFromDatePicker, setToggleSidebar } = useContext(BoardContext); 
+    const isHorizontal = useUiUxPosition();
     const [form] = Form.useForm();
     const { t } = useTranslation();
     
@@ -36,14 +38,6 @@ const HebrewDateInput2 = () => {
 
     const enterDayNumber = () => {
         return (
-            // <Form.Item name="hebrewDay" label={<label style={{ color: "white" }}> {t("dayText")} </label>} >
-            //     <Input
-            //         type="number" 
-            //         min={1}
-            //         max={31}
-            //     />
-            // </Form.Item>
-
             <Form.Item name="hebrewDay" label={<label style={{ color: "white" }}> {t("dayText")} </label>} >
                 <Select>
                     <Select.Option value="1"> {t("1Text")} </Select.Option>
@@ -118,9 +112,14 @@ const HebrewDateInput2 = () => {
         )
     }
 
+    const fieldsStyle = {
+        "BIG": "hebrew_date_input_wrapper inputs_big",
+        "MEDIUM": "hebrew_date_input_wrapper inputs_medium",
+        "SMALL": "hebrew_date_input_wrapper inputs_small"
+    }
+
     return (
-        <div className="hebrew_date_input_wrapper">
-            <div className="large_title"> {t("pickHebrewDateText")}: </div>
+        <div className={fieldsStyle[isHorizontal]}>
             <Form
                 labelCol={{span: 6}}
                 wrapperCol={{span: 16}}
@@ -131,8 +130,8 @@ const HebrewDateInput2 = () => {
                 {enterMonthWord()}
                 {enterYearNumber()}
 
-                <Form.Item label=" ">
-                    <Button onClick={() => convertDate()}> {t("submitText")} </Button>
+                <Form.Item style={{display: "flex", justifyContent: "center", alignItems: "center", width: "100%"}}>
+                    <Button style={{margin: "auto"}} onClick={() => convertDate()}> {t("submitText")} </Button>
                 </Form.Item>
             </Form>
 

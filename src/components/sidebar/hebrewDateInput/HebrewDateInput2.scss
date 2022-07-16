@@ -3,6 +3,24 @@
     color: white;
 }
 
+.inputs_big {
+    .ant-form-item {
+        margin-bottom: 20px;
+    }
+}
+
+.inputs_medium {
+    .ant-form-item {
+        margin-bottom: 10px;
+    }
+}
+
+.inputs_small {
+    .ant-form-item {
+        margin-bottom: 0px;
+    }
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto auto;

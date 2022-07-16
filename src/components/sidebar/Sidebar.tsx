@@ -18,7 +18,9 @@ const Sidebar = () => {
     if (isHorizontal === PositionEnum.BIG) 
         return (
             <div className="sidebar_wrapper_big">
+                <div className="large_title margin_top_space"> {t("pickGregorianDateText")}: </div>
                 <DatePickerComponent />
+                <div className="large_title margin_top_space"> {t("pickHebrewDateText")}: </div>
                 <HebrewDateInput2 />
             </div>
         )
@@ -27,7 +29,9 @@ const Sidebar = () => {
         return (
             <div className="sidebar_wrapper_medium display_flex_center">
                 <div className="sidebar_wrapper_holder_medium">
+                    <div className="large_title margin_top_space"> {t("pickGregorianDateText")}: </div>
                     <DatePickerComponent />
+                    <div className="large_title margin_top_space"> {t("pickHebrewDateText")}: </div>
                     <HebrewDateInput2 />
                      {closePopUpButton()}
                 </div>
@@ -37,7 +41,9 @@ const Sidebar = () => {
     return (
         <div className="sidebar_wrapper_small display_flex_h_center_v_top">
             <div className="sidebar_wrapper_holder_small">
+                <div className="large_title margin_top_space"> {t("pickGregorianDateText")}: </div>
                 <DatePickerComponent />
+                <div className="large_title margin_top_space"> {t("pickHebrewDateText")}: </div>
                 <HebrewDateInput2 />
                 {closePopUpButton()} 
             </div>

@@ -2,11 +2,15 @@ import i18n from "i18next";
 import {initReactI18next} from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import en from "./translations/en.json";
+import fr from "./translations/fr.json";
 import he from "./translations/he.json";
+import sr from "./translations/sr.json";
 
 const resources = {
   en,
-  he
+  fr,
+  he,
+  sr
 }
 
 export const availableLanguages = Object.keys(resources)

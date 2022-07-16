@@ -5,8 +5,6 @@ import 'moment/locale/zh-cn';
 
 import "react-datepicker/dist/react-datepicker.css";
 import { BoardContext } from "../../../context";
-import { t } from "i18next";
-let pickGregorianDate: string = t("pickGregorianDateText");
 
 const DatePickerComponent = () => {
     const { setSelectedDateFromDatePicker } = useContext(BoardContext); 
@@ -21,7 +19,6 @@ const DatePickerComponent = () => {
 
     return (
         <div className="date_picker_wrapper" style={{position: "relative"}}>
-            <div className="large_title"> {pickGregorianDate}: </div>
             <DatePicker 
                 style={{width: "100%"}} 
                 name="gregorian_date" 
