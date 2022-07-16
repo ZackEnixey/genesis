@@ -1,26 +1,29 @@
-import { useContext } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import languages from "../../assets/languages.png";
 
 import america from "../../assets/flags/america.png";
 import france from "../../assets/flags/france.png";
 import israel from "../../assets/flags/israel.png";
 import serbia from "../../assets/flags/serbia.png";
-import { TestContext } from "../../context";
 
 
 const Language = () => {
-    const { isTestMode } = useContext(TestContext);
+    const [toggle, setToggle] = useState<boolean>(false);
     const { t, i18n } = useTranslation();
 
     const setLanguage = (selectedLanguageAbbrevation: string) => {
         i18n.changeLanguage(selectedLanguageAbbrevation);
     }
 
-    if (!isTestMode) return null;
+    if (!toggle)
+        return <img onClick={() => setToggle(true)} className="language_button hover_effect" src={languages} alt="languages" />
 
     return (
-        <div className="language_wrapper"> 
+        <div className="language_wrapper" > 
+            <div className="cursor_pointer" onClick={() => setToggle(false)} > CLOSE </div>
             <div> {t("selectTheLannguageYouLike")} </div>
+
             <div className="language_item" onClick={() => setLanguage("en")}>
                 <img src={america} alt="english" className="language_flag" />
                 En. {t("english")}

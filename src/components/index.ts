@@ -4,6 +4,7 @@ export { default as Moon } from "./moon/Moon";
 export { default as MoonPhases } from "./moon/MoonPhases";
 export { default as SolarSystem } from "./solarSystem/SolarSystem";
 export { default as Sidebar } from "./sidebar/Sidebar";
+export { default as PopUpSidebar } from "./sidebar/PopUpSidebar";
 export { default as Language } from "./language/Language";
 export { default as DownloadPDF } from "./pdf/DownloadPDF"; 
 export { default as CalendarVisualisation } from "./calendarVisualisation/CalendarVisualisation"; 

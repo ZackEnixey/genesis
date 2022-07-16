@@ -36,6 +36,9 @@ interface IBoardContext {
 
     isGeorgianCallendar: boolean;
     setIsGeorgianCallendar(isGeorgianCallendar: boolean): void;
+
+    toggleSidebar: boolean, 
+    setToggleSidebar(toggleSidebar: boolean): void;
 };
 
 const BoardContext = createContext({} as IBoardContext);
@@ -67,6 +70,8 @@ const BoardContextProvider: FC<BoardContextProps> = (props) => {
     const [numberOfDaysBetweenTwoDates, setNumberOfDaysBetweenTwoDates] = useState<number>(0);
 
     const [isGeorgianCallendar, setIsGeorgianCallendar] = useState<boolean>(true);
+
+    const [toggleSidebar, setToggleSidebar] = useState<boolean>(false);
     
     const providerValue = {
         simulationNumberOfDays,
@@ -90,7 +95,9 @@ const BoardContextProvider: FC<BoardContextProps> = (props) => {
         numberOfDaysBetweenTwoDates,
         setNumberOfDaysBetweenTwoDates,
         isGeorgianCallendar,
-        setIsGeorgianCallendar
+        setIsGeorgianCallendar,
+        toggleSidebar, 
+        setToggleSidebar
     };
 
     return (

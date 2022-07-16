@@ -9,10 +9,12 @@ import {
 import { BoardContext } from "../../../context";
 
 const HebrewDateInput2 = () => {
-    const { setSelectedDateFromDatePicker } = useContext(BoardContext); 
+    const { setSelectedDateFromDatePicker, setToggleSidebar } = useContext(BoardContext); 
     const [form] = Form.useForm();
     
     const convertDate = () => {
+        setToggleSidebar(false)
+
         const yearNumber: string = form.getFieldValue("hebrewYear");
         const monthName: string = form.getFieldValue("hebrewMonth");
         const dayNumber: string = form.getFieldValue("hebrewDay");

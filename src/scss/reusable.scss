@@ -16,3 +16,17 @@
 .ant-form-item-label {
     color: white;
 }
+
+.cursor_pointer {
+    cursor: pointer;
+}
+
+.hover_effect {
+    transform: scale(1);
+}
+.hover_effect:active {
+    transform: scale(0.8);
+}
+.hover_effect:hover {
+    transform: scale(1.2);
+}
