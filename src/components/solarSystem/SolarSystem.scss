@@ -29,9 +29,15 @@
     align-items: center;  
     overflow: hidden; 
     
-    .sun_image {
+    .sun_image_big {
         width: 20vh;
         height: 20vh;
+        z-index: 1;
+    }
+    
+    .sun_image_small {
+        width: 20vw;
+        height: 20vw;
         z-index: 1;
     }
 

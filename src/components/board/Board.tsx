@@ -26,7 +26,6 @@ const Board = () => {
                 <Language />
                 <PopUpSidebar />
                 <MoonPhases />
-                <DownloadPDF />
                 <AdjustEarthToSunAngle />         
                 {toggleSidebar && <Sidebar />}
             </div>
@@ -42,7 +41,6 @@ const Board = () => {
             <Language />
             <Sidebar />
             <MoonPhases />
-            <DownloadPDF />
             <AdjustEarthToSunAngle />         
         </div>
     )

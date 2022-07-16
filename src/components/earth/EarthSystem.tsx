@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { Moon } from "..";
 
 import { BoardContext } from "../../context";
+import { PositionEnum } from "../../types";
+import useUiUxPosition from "../customHooks/useUiUxPosition";
 import EarthRotatingAnimation from "./EarthRotatingAnimation";
 
 const EarthSystem = () => {
@@ -11,6 +13,8 @@ const EarthSystem = () => {
         earthAngleToSun
     } = useContext(BoardContext);
 
+    const isHorizontal = useUiUxPosition();
+    
     let radius : string = "40";
     const theNumberOfDegreesInOneHalfOfCircle: number = 180;
     const angleInRadians = earthAngleToSun*Math.PI/theNumberOfDegreesInOneHalfOfCircle;
@@ -19,7 +23,7 @@ const EarthSystem = () => {
     const cosineSquare = Math.cos(angleInRadians)*Math.cos(angleInRadians);
     const equation_numerator = earthTrajectoryWidth*earthTrajectoryHeight;
     const equation_denominator = Math.sqrt(earthTrajectoryWidth * earthTrajectoryWidth * sineSquare + earthTrajectoryHeight * earthTrajectoryHeight * cosineSquare );
-    radius = Math.round(equation_numerator/equation_denominator)+"vh";
+    radius = isHorizontal === PositionEnum.SMALL ? "60vw" : Math.round(equation_numerator/equation_denominator)+"vh";
 
     const error: number = -35;
             

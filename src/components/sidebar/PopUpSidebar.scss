@@ -3,7 +3,7 @@
     bottom: 10px;
     left: 10px;
 
-    width: 200px;
+    width: 130px;
     height: 50px;
     background: white;
 
@@ -12,5 +12,20 @@
     align-items: center;
 
     cursor: pointer;
+}
 
+.popup_sidebar_wrapper_small {
+    position: absolute;
+    bottom: 40vh;
+    left: 10px;
+
+    width: 130px;
+    height: 50px;
+    background: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
 }
