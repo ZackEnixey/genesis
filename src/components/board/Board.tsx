@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { SolarSystem, Sidebar, MoonPhases, Language, DownloadPDF, CalendarVisualisation, PopUpSidebar } from "../";
+import { SolarSystem, Sidebar, MoonPhases, Language, CalendarVisualisation, PopUpSidebar } from "../";
 import { BoardContext } from "../../context";
 import { PositionEnum } from "../../types";
 import useUiUxPosition from "../customHooks/useUiUxPosition";

@@ -26,6 +26,8 @@
         "pickGregorianDateText": "Izaberi Gregorijanski datum",
         "pickHebrewDateText": "Izaberi hebrejski datum",
         "submitText": "izaberi",
+        "enterYourDateText": "Unesite Vas datum",
+        "dateText": "Datum",
 
         "NisanText": "Nisan",
         "IyyarText": "Iyyar",

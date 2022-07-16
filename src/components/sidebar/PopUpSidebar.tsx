@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { useTranslation } from "react-i18next";
 import { BoardContext } from "../../context";
 import { PositionEnum } from "../../types";
 import useUiUxPosition from "../customHooks/useUiUxPosition";
@@ -6,19 +7,18 @@ import useUiUxPosition from "../customHooks/useUiUxPosition";
 const PopUpSidebar = () => {
     const isHorizontal = useUiUxPosition();
     const {setToggleSidebar} = useContext(BoardContext);
-    const enterYourDateText: string = "Enter your date";
-    const enterYourDateTextSmall: string = "Date";
+    const { t } = useTranslation();
 
     if (isHorizontal === PositionEnum.SMALL)
         return (
             <div className="popup_sidebar_wrapper width_small" onClick={() => setToggleSidebar(true)}>
-                {enterYourDateTextSmall}
+                {t("enterYourDateText")}
             </div>
         )
 
     return (
         <div className="popup_sidebar_wrapper width_big" onClick={() => setToggleSidebar(true)}>
-           {enterYourDateText}
+           {t("dateText")}
         </div>
     )
 }

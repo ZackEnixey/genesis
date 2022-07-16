@@ -26,6 +26,8 @@
         "pickGregorianDateText": "Pick Gregorian date",
         "pickHebrewDateText": "Pick Hebrew date",
         "submitText": "submit",
+        "enterYourDateText": "Enter your date",
+        "dateText": "Date",
 
         "NisanText": "Nisan",
         "IyyarText": "Iyyar",

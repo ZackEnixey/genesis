@@ -27,12 +27,18 @@ const EarthSystem = () => {
 
     const error: number = -35;
             
+    const earthStyleDic = {
+        "BIG": "earth_night_side_big",
+        "MEDIUM": "earth_night_side_big",
+        "SMALL": "earth_night_side_small"
+    }
+
     return(
         <div className="earth_to_sun_circle_diameter" style={{transform: `rotate(${earthAngleToSun - error}deg)`, width: `${radius}`}} >
             <div className="wrapper_demo_xx" style={{transform: `rotate(-${earthAngleToSun - error}deg)`}} >
                 <EarthRotatingAnimation />
             </div>
-            <div className="earth_night_side"></div>
+            <div className={earthStyleDic[isHorizontal]}></div>
             <Moon />
         </div>
     )

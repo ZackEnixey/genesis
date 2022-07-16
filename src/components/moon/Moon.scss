@@ -1,9 +1,6 @@
 .moon_wrapper {
     position: relative;
-    bottom: 10vh;
-    right: 10vh;
-    height: 20vh;
-    width: 20vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,4 +25,18 @@
         transform: rotate(-40deg);
         box-shadow: inset 2vh 1vh 1vh -1vh rgba(0, 0, 0, 0.8);
     }
+}
+
+.moon_wrapper_size_big {
+    bottom: 10vh;
+    right: 10vh;
+    height: 20vh;
+    width: 20vh;
+}
+
+.moon_wrapper_size_small {
+    bottom: 10vw;
+    right: 10vw;
+    height: 20vw;
+    width: 20vw;
 }
