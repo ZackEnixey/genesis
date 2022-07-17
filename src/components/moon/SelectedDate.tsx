@@ -10,7 +10,6 @@ const SelectedDate = () => {
         setSimulationNumberOfDays,
         setEarthAngleToSun,
         theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun,
-        isGeorgianCallendar
     } = useContext(BoardContext);
     const [currentDate, setCurrentDate] = useState<string>("Wed, 13 July 2022 07:15:00 GMT");
     const [currentHebrewDate, setCurrentHebrewDate] = useState<string>("Wed, 13 July 2022 07:15:00 GMT");
