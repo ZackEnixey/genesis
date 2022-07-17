@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { BoardContext } from "../../context";
+import { PositionEnum } from "../../types";
+import useUiUxPosition from "../customHooks/useUiUxPosition";
 
 const AdjustEarthToSunAngle = () => {
     const {
@@ -9,13 +11,8 @@ const AdjustEarthToSunAngle = () => {
         setEarthAngleToSun,
         theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun
     } = useContext(BoardContext);  
+    const isHorizontal = useUiUxPosition();
     const { t } = useTranslation();
-    
-    // const transferInputValueToEarthToSunDegrees = (event: React.ChangeEvent<HTMLInputElement>) => {
-    //     const enteredValue: number = parseInt(event.target.value) || 0;
-    //     setSimulationNumberOfDays(enteredValue);
-    //     setEarthAngleToSun(enteredValue*theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun);
-    // }
 
     const increment = (numberOfDays: number) => {
         const newValue: number = simulationNumberOfDays + numberOfDays
@@ -23,21 +20,23 @@ const AdjustEarthToSunAngle = () => {
         setEarthAngleToSun(newValue*theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun);
     }
 
+    const buttonStyleDic: any= {
+        "BIG": "increment_button",
+        "MEDIUM": "increment_button_medium",
+        "SMALL": "increment_button_small"
+    }
+
+    const buttonPositionStyleDic: any= {
+        "BIG": "adjust_earth_to_sun_angle_wrapper",
+        "MEDIUM": "adjust_earth_to_sun_angle_wrapper_medium",
+        "SMALL": "adjust_earth_to_sun_angle_wrapper_small"
+    }
+
     return (
-        <div className="adjust_earth_to_sun_angle_wrapper">
-                <button className="increment_button" onClick={() => increment(-1)}>  + {t("dayText")}  </button>
-                <button className="increment_button" onClick={() => increment(-30)}> + {t('monthText')} </button>
-                <button className="increment_button" onClick={() => increment(-360)}> + {t('yearText')}  </button>
-                {/* <div className="increment_wrapper">
-                    <input 
-                        type="number" 
-                        name="clicks" 
-                        value={simulationNumberOfDays} 
-                        onChange={ (event: React.ChangeEvent<HTMLInputElement>) => transferInputValueToEarthToSunDegrees(event) } 
-                        className="input_incrementer"
-                    /> 
-                    <div className="hiding_patch"></div>
-                </div> */}
+        <div className={buttonPositionStyleDic[isHorizontal]}>
+            <button className={buttonStyleDic[isHorizontal]} onClick={() => increment(-1)}>  +{t("dayText")}  </button>
+            <button className={buttonStyleDic[isHorizontal]} onClick={() => increment(-30)}> +{t('monthText')} </button>
+            <button className={buttonStyleDic[isHorizontal]} onClick={() => increment(-360)}> +{t('yearText')}  </button>
         </div>
     )
 }
