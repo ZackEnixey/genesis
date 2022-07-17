@@ -16,18 +16,27 @@ const AdjustEarthToSunAngle = () => {
         setEarthAngleToSun(enteredValue*theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun);
     }
 
+    const increment = (numberOfDays: number) => {
+        const newValue: number = simulationNumberOfDays + numberOfDays
+        setSimulationNumberOfDays(newValue);
+        setEarthAngleToSun(newValue*theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun);
+    }
+
     return (
         <div className="adjust_earth_to_sun_angle_wrapper">
-            <div className="increment_wrapper">
-                <input 
-                    type="number" 
-                    name="clicks" 
-                    value={simulationNumberOfDays} 
-                    onChange={ (event: React.ChangeEvent<HTMLInputElement>) => transferInputValueToEarthToSunDegrees(event) } 
-                    className="input_incrementer"
-                /> 
-                <div className="hiding_patch"></div>
-            </div>
+                <button className="increment_button" onClick={() => increment(-1)}> + day </button>
+                <button className="increment_button" onClick={() => increment(-30)}> + month </button>
+                <button className="increment_button" onClick={() => increment(-360)}> + year </button>
+                {/* <div className="increment_wrapper">
+                    <input 
+                        type="number" 
+                        name="clicks" 
+                        value={simulationNumberOfDays} 
+                        onChange={ (event: React.ChangeEvent<HTMLInputElement>) => transferInputValueToEarthToSunDegrees(event) } 
+                        className="input_incrementer"
+                    /> 
+                    <div className="hiding_patch"></div>
+                </div> */}
         </div>
     )
 }
