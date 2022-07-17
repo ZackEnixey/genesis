@@ -16,7 +16,6 @@ const MoonPhases = () => {
     const renderMoon = () => {
         let currentGeorgianDate = new Date(dateToUtcStringCounterFromInitialDay(simulationNumberOfDays, initialNewMoonDate))
         let ordinalNumberInHebrewMonth: number = Number(new Intl.DateTimeFormat('he-u-ca-hebrew', {day:'numeric'}).format(currentGeorgianDate));
-        console.log("value:" + ordinalNumberInHebrewMonth);
 
         // the young moon 1
         if (ordinalNumberInHebrewMonth === 1) {

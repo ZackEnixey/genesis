@@ -22,7 +22,6 @@ export default function useUiUxPosition() {
           setIsHorizontal(PositionEnum.MEDIUM);
           return;
         }
-        console.log("small");
         setIsHorizontal(PositionEnum.SMALL);
     }  
     

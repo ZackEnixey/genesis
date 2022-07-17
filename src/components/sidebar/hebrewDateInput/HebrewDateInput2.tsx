@@ -24,13 +24,9 @@ const HebrewDateInput2 = () => {
         const dayNumber: string = form.getFieldValue("hebrewDay");
         const hebrewToGregorianUrlLink: string = "https://www.hebcal.com/converter?cfg=json&hy="+yearNumber+"&hm="+monthName+"&hd="+dayNumber+"&h2g=1&strict=1";
 
-        console.log(hebrewToGregorianUrlLink);
-
         axios.get(hebrewToGregorianUrlLink).then((response: any) => {
             let data = response.data;
-            console.log(data);
             let gregorianDate = new Date(data.gy + " " + data.gm + " " + data.gd);
-            console.log(gregorianDate);
             setSelectedDateFromDatePicker(gregorianDate);
           });
 

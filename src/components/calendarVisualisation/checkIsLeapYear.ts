@@ -9,8 +9,6 @@ const checkIsLeapYear = (simulationNumberOfDays: number, initialNewMoonDate: Dat
     const remainderFullYear: number = hebrewFullYearNum % 19;
     const numberOfLeapYearsSince1940: number = Math.floor( Math.abs(5700 - hebrewFullYearNum) / 19) * 7;
 
-    console.log({hebrewFullYearNum, remainderFullYear});
- 
     if ( remainderFullYear === 2 ) 
         return {isLeap: false, numberOfLeapYearsSince1940: numberOfLeapYearsSince1940}
 

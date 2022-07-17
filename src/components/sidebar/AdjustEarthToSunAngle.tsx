@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { useTranslation } from "react-i18next";
 import { BoardContext } from "../../context";
 
 const AdjustEarthToSunAngle = () => {
@@ -8,8 +7,7 @@ const AdjustEarthToSunAngle = () => {
         setSimulationNumberOfDays,
         setEarthAngleToSun,
         theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun
-    } = useContext(BoardContext);
-    const { t } = useTranslation();   
+    } = useContext(BoardContext);  
    
     
     const transferInputValueToEarthToSunDegrees = (event: React.ChangeEvent<HTMLInputElement>) => {
