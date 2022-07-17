@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { useTranslation } from "react-i18next";
 import { BoardContext } from "../../context";
 
 const AdjustEarthToSunAngle = () => {
@@ -8,13 +9,13 @@ const AdjustEarthToSunAngle = () => {
         setEarthAngleToSun,
         theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun
     } = useContext(BoardContext);  
-   
+    const { t } = useTranslation();
     
-    const transferInputValueToEarthToSunDegrees = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const enteredValue: number = parseInt(event.target.value) || 0;
-        setSimulationNumberOfDays(enteredValue);
-        setEarthAngleToSun(enteredValue*theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun);
-    }
+    // const transferInputValueToEarthToSunDegrees = (event: React.ChangeEvent<HTMLInputElement>) => {
+    //     const enteredValue: number = parseInt(event.target.value) || 0;
+    //     setSimulationNumberOfDays(enteredValue);
+    //     setEarthAngleToSun(enteredValue*theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun);
+    // }
 
     const increment = (numberOfDays: number) => {
         const newValue: number = simulationNumberOfDays + numberOfDays
@@ -24,9 +25,9 @@ const AdjustEarthToSunAngle = () => {
 
     return (
         <div className="adjust_earth_to_sun_angle_wrapper">
-                <button className="increment_button" onClick={() => increment(-1)}> + day </button>
-                <button className="increment_button" onClick={() => increment(-30)}> + month </button>
-                <button className="increment_button" onClick={() => increment(-360)}> + year </button>
+                <button className="increment_button" onClick={() => increment(-1)}>  + {t("dayText")}  </button>
+                <button className="increment_button" onClick={() => increment(-30)}> + {t('monthText')} </button>
+                <button className="increment_button" onClick={() => increment(-360)}> + {t('yearText')}  </button>
                 {/* <div className="increment_wrapper">
                     <input 
                         type="number" 
