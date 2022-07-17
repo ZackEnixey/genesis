@@ -16,10 +16,10 @@ const Moon = () => {
     }
 
     return (
-        <div className={moonWrapperDimenstionDic[isHorizontal]} style={{transform: `rotate(${theMoonShiftDeegreesAccordintToTheNumberOfDays}deg)`}} >
-            <img className="moon_picture" src={moonImg} alt="moon" style={{transform: `rotate(${-theMoonShiftDeegreesAccordintToTheNumberOfDays}deg)`}}  />  
-            <img className="moon_picture" src={moonImg} alt="moon" style={{transform: `rotate(${-theMoonShiftDeegreesAccordintToTheNumberOfDays}deg)`}}  />  
-            <div className="moon_shadow" style={{transform: `rotate(${-theMoonShiftDeegreesAccordintToTheNumberOfDays-30}deg)`}} >  </div>
+        <div className={moonWrapperDimenstionDic[isHorizontal]} style={{transition: "1s", transform: `rotate(${theMoonShiftDeegreesAccordintToTheNumberOfDays}deg)`}} >
+            <img className="moon_picture" src={moonImg} alt="moon" style={{transition: "1s", transform: `rotate(${-theMoonShiftDeegreesAccordintToTheNumberOfDays}deg)`}}  />  
+            <img className="moon_picture" src={moonImg} alt="moon" style={{transition: "1s", transform: `rotate(${-theMoonShiftDeegreesAccordintToTheNumberOfDays}deg)`}}  />  
+            <div className="moon_shadow" style={{transition: "1s", transform: `rotate(${-theMoonShiftDeegreesAccordintToTheNumberOfDays-30}deg)`}} >  </div>
         </div>
     )
 }

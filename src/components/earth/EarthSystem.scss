@@ -4,7 +4,8 @@
     background: gold;
     position: absolute;
     transform: rotate(0deg);
-
+    transition: 1s;
+    transition-timing-function: ease-out;
     
     .wrapper_demo_xx {
         position: absolute;
@@ -26,6 +27,8 @@
     border-radius: 50%;
     box-shadow: inset 8vh 6vh 2vh -6vh rgba(0, 0, 0, 0.8);
     transform: rotate(-40deg);
+    transition: 1s;
+    transition-timing-function: ease-out;
     z-index: 2;
 }
 
@@ -38,5 +41,7 @@
     border-radius: 50%;
     box-shadow: inset 8vh 6vh 2vh -6vh rgba(0, 0, 0, 0.8);
     transform: rotate(-40deg);
+    transition: 1s;
+    transition-timing-function: ease-out;
     z-index: 2;
 }
