@@ -36,7 +36,7 @@ const AdjustEarthToSunAngle = () => {
         <div className={buttonPositionStyleDic[isHorizontal]}>
             <button className={buttonStyleDic[isHorizontal]} onClick={() => increment(-1)}>  +{t("dayText")}  </button>
             <button className={buttonStyleDic[isHorizontal]} onClick={() => increment(-30)}> +{t('monthText')} </button>
-            <button className={buttonStyleDic[isHorizontal]} onClick={() => increment(-360)}> +{t('yearText')}  </button>
+            <button className={buttonStyleDic[isHorizontal]} onClick={() => increment(-365)}> +{t('yearText')}  </button>
         </div>
     )
 }
