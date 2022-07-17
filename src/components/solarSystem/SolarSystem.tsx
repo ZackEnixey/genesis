@@ -24,7 +24,7 @@ const SolarSystem = () => {
             <img className={sunSizeDic[isHorizontal]} src={sunImg} alt="sun" />
             <div className="solar_system_wrapper_test">
                 <div className="elipse_wrapper">
-                    <div className="earth_trajectory_surface" style={{height: `${height}`, width: `${width}`}} ></div>
+                    <div className="earth_trajectory_surface" style={{height: `${height}`, width: `${width}`, transition: "1s"}} ></div>
                     <EarthSystem />
                 </div>
             </div>
