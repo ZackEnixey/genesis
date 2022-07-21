@@ -4,7 +4,7 @@ import { BoardContext } from "../../context";
 import useUiUxPosition from "../customHooks/useUiUxPosition";
 
 const Moon = () => {
-    const { simulationNumberOfDays, theNumberOfDegreesTheMoonMovesEachDayAccordingToOurEyes} = useContext(BoardContext);
+    const { simulationNumberOfDays, theNumberOfDegreesTheMoonMovesEachDayAccordingToOurEyes, transitionTime } = useContext(BoardContext);
     const isHorizontal = useUiUxPosition();
     const angleCorrection: number = 135;
     const theMoonShiftDeegreesAccordintToTheNumberOfDays: number = simulationNumberOfDays * theNumberOfDegreesTheMoonMovesEachDayAccordingToOurEyes + angleCorrection;
@@ -16,10 +16,10 @@ const Moon = () => {
     }
 
     return (
-        <div className={moonWrapperDimenstionDic[isHorizontal]} style={{transition: "1s", transform: `rotate(${theMoonShiftDeegreesAccordintToTheNumberOfDays}deg)`}} >
-            <img className="moon_picture" src={moonImg} alt="moon" style={{transition: "1s", transform: `rotate(${-theMoonShiftDeegreesAccordintToTheNumberOfDays}deg)`}}  />  
-            <img className="moon_picture" src={moonImg} alt="moon" style={{transition: "1s", transform: `rotate(${-theMoonShiftDeegreesAccordintToTheNumberOfDays}deg)`}}  />  
-            <div className="moon_shadow" style={{transition: "1s", transform: `rotate(${-theMoonShiftDeegreesAccordintToTheNumberOfDays-30}deg)`}} >  </div>
+        <div className={moonWrapperDimenstionDic[isHorizontal]} style={{transition: transitionTime, transform: `rotate(${theMoonShiftDeegreesAccordintToTheNumberOfDays}deg)`}} >
+            <img className="moon_picture" src={moonImg} alt="moon" style={{transition: transitionTime, transform: `rotate(${-theMoonShiftDeegreesAccordintToTheNumberOfDays}deg)`}}  />  
+            <img className="moon_picture" src={moonImg} alt="moon" style={{transition: transitionTime, transform: `rotate(${-theMoonShiftDeegreesAccordintToTheNumberOfDays}deg)`}}  />  
+            <div className="moon_shadow" style={{transition: transitionTime, transform: `rotate(${-theMoonShiftDeegreesAccordintToTheNumberOfDays-30}deg)`}} >  </div>
         </div>
     )
 }

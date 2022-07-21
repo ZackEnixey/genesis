@@ -7,7 +7,7 @@ import checkIsLeapYear from "./checkIsLeapYear";
 
 const CalendarVisualisation = () => {
     const isHorizontal = useUiUxPosition();
-    const { simulationNumberOfDays, initialNewMoonDate } = useContext(BoardContext);
+    const { simulationNumberOfDays, initialNewMoonDate, transitionTime } = useContext(BoardContext);
     const numberOfDaysInAdar2: number = 29;
     const lunarErrorPerDayInDegrees: number = 0.02925555555;
     const numberOfLeapYersTillThisDate: number = checkIsLeapYear(simulationNumberOfDays, initialNewMoonDate).numberOfLeapYearsSince1940; // + 1 so we would avoid it to be 0;
@@ -26,8 +26,8 @@ const CalendarVisualisation = () => {
 
     return (
         <div className="calendar_visualisation_wrapper">
-            <img style={{transform: `rotate(${-hebrewMonthErrorShift}deg)`, transition: "1s"}} src={hebrewMonths} alt="english" className={calendarSizeDic[isHorizontal]} />
-            <img src={seasonsAndMonths} alt="english" style={{transition: "1s"}} className={calendarSizeDic[isHorizontal]} />
+            <img style={{transform: `rotate(${-hebrewMonthErrorShift}deg)`, transition: transitionTime}} src={hebrewMonths} alt="english" className={calendarSizeDic[isHorizontal]} />
+            <img src={seasonsAndMonths} alt="english" style={{transition: transitionTime}} className={calendarSizeDic[isHorizontal]} />
         </div>
     )
 }

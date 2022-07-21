@@ -7,7 +7,7 @@ import { PositionEnum } from "../../types";
 
 const SolarSystem = () => {
     const isHorizontal = useUiUxPosition();
-    const { earthTrajectoryWidth, earthTrajectoryHeight } = useContext(BoardContext);
+    const { earthTrajectoryWidth, earthTrajectoryHeight, transitionTime } = useContext(BoardContext);
     const smallHeight: string = "60vw";
     const smallWidth: string = "60vw";
     const height: string = isHorizontal === PositionEnum.SMALL ? smallHeight: earthTrajectoryHeight+"vh";
@@ -24,7 +24,7 @@ const SolarSystem = () => {
             <img className={sunSizeDic[isHorizontal]} src={sunImg} alt="sun" />
             <div className="solar_system_wrapper_test">
                 <div className="elipse_wrapper">
-                    <div className="earth_trajectory_surface" style={{height: `${height}`, width: `${width}`, transition: "1s"}} ></div>
+                    <div className="earth_trajectory_surface" style={{height: `${height}`, width: `${width}`, transition: transitionTime}} ></div>
                     <EarthSystem />
                 </div>
             </div>

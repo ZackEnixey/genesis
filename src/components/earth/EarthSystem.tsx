@@ -10,7 +10,8 @@ const EarthSystem = () => {
     const { 
         earthTrajectoryWidth, 
         earthTrajectoryHeight, 
-        earthAngleToSun
+        earthAngleToSun,
+        transitionTime
     } = useContext(BoardContext);
 
     const isHorizontal = useUiUxPosition();
@@ -34,8 +35,8 @@ const EarthSystem = () => {
     }
 
     return(
-        <div className="earth_to_sun_circle_diameter" style={{transform: `rotate(${earthAngleToSun - error}deg)`, width: `${radius}`}} >
-            <div className="wrapper_demo_xx" style={{transform: `rotate(-${earthAngleToSun - error}deg)`}} >
+        <div className="earth_to_sun_circle_diameter" style={{transform: `rotate(${earthAngleToSun - error}deg)`, transition: transitionTime, width: `${radius}`}} >
+            <div className="wrapper_demo_xx" style={{transform: `rotate(-${earthAngleToSun - error}deg)`, transition: transitionTime}} >
                 <EarthRotatingAnimation />
             </div>
             <div className={earthStyleDic[isHorizontal]}></div>

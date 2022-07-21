@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { BoardContext } from "../../context";
-import { PositionEnum } from "../../types";
 import useUiUxPosition from "../customHooks/useUiUxPosition";
 
 const AdjustEarthToSunAngle = () => {
@@ -9,21 +8,38 @@ const AdjustEarthToSunAngle = () => {
         simulationNumberOfDays,
         setSimulationNumberOfDays,
         setEarthAngleToSun,
-        theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun
+        theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun,
+        setTransitionTime
     } = useContext(BoardContext);  
     const isHorizontal = useUiUxPosition();
     const { t } = useTranslation();
 
     const increment = (numberOfDays: number) => {
+        console.log(Math.abs(numberOfDays));
+        setTransitionTime(transitionTimeDic[ Math.abs(numberOfDays) ]);
         const newValue: number = simulationNumberOfDays + numberOfDays
         setSimulationNumberOfDays(newValue);
         setEarthAngleToSun(newValue*theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun);
     }
 
+    const decrement = (numberOfDays: number) => {
+        console.log(Math.abs(numberOfDays));
+        setTransitionTime(transitionTimeDic[ Math.abs(numberOfDays) ]);
+        const newValue: number = simulationNumberOfDays - numberOfDays
+        setSimulationNumberOfDays(newValue);
+        setEarthAngleToSun(newValue*theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun);
+    }
+
+    const transitionTimeDic: any = {
+        1: "1s",
+        30: "3s",
+        365: "5s"
+    }
+
     const buttonStyleDic: any= {
-        "BIG": "increment_button",
-        "MEDIUM": "increment_button_medium",
-        "SMALL": "increment_button_small"
+        "BIG": "increment_button cursor_pointer",
+        "MEDIUM": "increment_button_medium cursor_pointer",
+        "SMALL": "increment_button_small cursor_pointer"
     }
 
     const buttonPositionStyleDic: any= {
@@ -34,9 +50,25 @@ const AdjustEarthToSunAngle = () => {
 
     return (
         <div className={buttonPositionStyleDic[isHorizontal]}>
-            <button className={buttonStyleDic[isHorizontal]} onClick={() => increment(-1)}>  +{t("dayText")}  </button>
-            <button className={buttonStyleDic[isHorizontal]} onClick={() => increment(-30)}> +{t('monthText')} </button>
-            <button className={buttonStyleDic[isHorizontal]} onClick={() => increment(-365)}> +{t('yearText')}  </button>
+            
+            <div className="button_holder">
+                <button className={buttonStyleDic[isHorizontal]} onClick={() => decrement(-1)}>  - </button>
+                <div> {t("dayText")} </div>
+                <button className={buttonStyleDic[isHorizontal]} onClick={() => increment(-1)}>  + </button>
+            </div>
+            
+            <div className="button_holder">
+                <button className={buttonStyleDic[isHorizontal]} onClick={() => decrement(-30)}> - </button>
+                <div> {t('monthText')} </div>
+                <button className={buttonStyleDic[isHorizontal]} onClick={() => increment(-30)}> + </button>
+            </div>
+            
+            <div className="button_holder">
+                <button className={buttonStyleDic[isHorizontal]} onClick={() => decrement(-365)}> - </button>
+                <div> {t('yearText')} </div>
+                <button className={buttonStyleDic[isHorizontal]} onClick={() => increment(-365)}> + </button>
+            </div>
+        
         </div>
     )
 }

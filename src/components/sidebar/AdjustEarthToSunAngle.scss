@@ -27,16 +27,25 @@
 
 
 .increment_button {
-    width: 130px;
+    width: 30px;
     margin: 5px;
 }
 
 .increment_button_medium {
-    width: 130px;
+    width: 30px;
     margin: 5px;
 }
 
 .increment_button_small {
-    width: 20vw;
+    width: 30px;
     margin: 5px;
+}
+
+.button_holder {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 130px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    margin: 5px 0;
 }
