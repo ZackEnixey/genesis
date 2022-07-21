@@ -9,7 +9,7 @@ export default function useUiUxPosition() {
   const [isHorizontal, setIsHorizontal] = useState<TPosition>(PositionEnum.BIG);
     const limitWidthTop: number = 900;
     const limitWidthBottom: number = 450;
-    const limitHeight: number = 600;
+    const limitHeight: number = 500;
     const borderValueTop: number = limitWidthTop/limitHeight;
     const borderValueBottom: number = limitWidthBottom/limitHeight;
 

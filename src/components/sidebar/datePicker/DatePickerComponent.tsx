@@ -15,7 +15,7 @@ import { BoardContext } from "../../../context";
 import { useTranslation } from "react-i18next";
 
 const DatePickerComponent = () => {
-    const { setSelectedDateFromDatePicker } = useContext(BoardContext); 
+    const { setSelectedDateFromDatePicker, setToggleSidebar, setTransitionTime } = useContext(BoardContext); 
     const { i18n } = useTranslation();
 
     const localLanguageDic: any = {
@@ -30,7 +30,9 @@ const DatePickerComponent = () => {
         if(!dateString) return;
 
         const selectedDateTypeDate: Date = new Date(dateString);
+        setTransitionTime("1s");
         setSelectedDateFromDatePicker(selectedDateTypeDate);
+        setToggleSidebar(false);
     }
 
     return (

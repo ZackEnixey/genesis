@@ -73,6 +73,9 @@
         "27Text": "27",
         "28Text": "28",
         "29Text": "29",
-        "30Text": "30"
+        "30Text": "30",
+
+        "hebrewText": "Hebrew",
+        "gregorianText": "Gregorian"
     }
 }

@@ -61,7 +61,8 @@ $sidebar_background_color: rgb(136, 6, 136);
 }
 
 .close_sidebar {
-    position: relative;
+    position: absolute;
+    bottom: 10px;
 
     display: flex;
     align-items: center;
@@ -72,28 +73,61 @@ $sidebar_background_color: rgb(136, 6, 136);
     background-color: rgb(117, 5, 5);
     color: white;
     border: 1px solid white;
+    width: 95%;
 }
 
-.close_sidebar:hover {
+.close_sidebar:active {
+    transform: scale(0.95);
     background-color: rgb(203, 30, 30);
 }
 
 .close_sidebar:hover {
+    transform: scale(1.05);
     background-color: rgb(77, 1, 1);
 }
 
 .sidebar_wrapper_holder_medium {
+    position: relative;
     width: 400px;
+    height: 330px;
     padding: 10px;
+    padding-top: 0;
     background: $sidebar_background_color;
     border: white 1px solid;
 }
 
 .sidebar_wrapper_holder_small {
     width: 90%;
+    height: 300px;
     padding: 10px;
+    padding-top: 0;
     background: $sidebar_background_color;
     border: white 1px solid;
     position: relative;
     top: 60px;
+}
+
+.sidebar_header {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+    .sidebar_header_button {
+        font-size: 18px;
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        cursor: pointer
+    }
+
+    .active {
+        background-color: rgb(255,255,255,0.5);
+        font-weight: 600;
+    }
 }
