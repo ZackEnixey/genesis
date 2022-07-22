@@ -10,13 +10,13 @@ const CalendarVisualisation = () => {
     const { simulationNumberOfDays, initialNewMoonDate, transitionTime } = useContext(BoardContext);
     const numberOfDaysInAdar2: number = 29;
     const lunarErrorPerDayInDegrees: number = 0.02925555555;
-    const numberOfLeapYersTillThisDate: number = checkIsLeapYear(simulationNumberOfDays, initialNewMoonDate).numberOfLeapYearsSince1940; // + 1 so we would avoid it to be 0;
+    const numberOfLeapYersTillThisDate: number = checkIsLeapYear(simulationNumberOfDays.value, initialNewMoonDate).numberOfLeapYearsSince1940; // + 1 so we would avoid it to be 0;
     
     let leapYearShift: number = numberOfDaysInAdar2 * numberOfLeapYersTillThisDate;    
 
     const error: number = 24;
 
-    const hebrewMonthErrorShift: number = lunarErrorPerDayInDegrees*simulationNumberOfDays + leapYearShift + error;
+    const hebrewMonthErrorShift: number = lunarErrorPerDayInDegrees*simulationNumberOfDays.value + leapYearShift + error;
 
     const calendarSizeDic = {
         "BIG": "calendar_visualisation_img",

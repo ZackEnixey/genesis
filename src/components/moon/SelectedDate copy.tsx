@@ -13,7 +13,7 @@ const SelectedDate = () => {
     const [currentDate, setCurrentDate] = useState<string>("Mon, 11 March 2022 07:15:00 GMT");
 
     useEffect( () => {
-        addDaysToInitialDate(simulationNumberOfDays)
+        addDaysToInitialDate(simulationNumberOfDays.value)
     }, [simulationNumberOfDays])
 
     useEffect( () => {
@@ -49,7 +49,7 @@ const SelectedDate = () => {
         const difference = date1.getTime() - date2.getTime();
 
         var numberOfDaysBetweenTwoDates = Math.ceil(difference / (1000 * 3600 * 24)) - 1;
-        setSimulationNumberOfDays(numberOfDaysBetweenTwoDates);
+        setSimulationNumberOfDays({value: numberOfDaysBetweenTwoDates, direction: "increase", shiftType: "day"});
         setEarthAngleToSun(numberOfDaysBetweenTwoDates*theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun);
     }
 

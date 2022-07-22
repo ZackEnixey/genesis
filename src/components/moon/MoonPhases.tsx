@@ -7,14 +7,14 @@ import SelectedDate from "./SelectedDate";
 const MoonPhases = () => {
     const { simulationNumberOfDays, initialNewMoonDate, synodicPeriodNumberOfDays } = useContext(BoardContext);
     
-    const numberOfSynodicPeriod: number = Math.abs(simulationNumberOfDays) / synodicPeriodNumberOfDays;
+    const numberOfSynodicPeriod: number = Math.abs(simulationNumberOfDays.value) / synodicPeriodNumberOfDays;
     const progressOfTheMoonMovementInSynodicPeriodInPercentage: number = numberOfSynodicPeriod - Math.floor(numberOfSynodicPeriod);
     const progressOfTheMoonMovementInSynodicPeriodInDays: number = synodicPeriodNumberOfDays * progressOfTheMoonMovementInSynodicPeriodInPercentage;
 
     const value: number = progressOfTheMoonMovementInSynodicPeriodInDays;
 
     const renderMoon = () => {
-        let currentGeorgianDate = new Date(dateToUtcStringCounterFromInitialDay(simulationNumberOfDays, initialNewMoonDate))
+        let currentGeorgianDate = new Date(dateToUtcStringCounterFromInitialDay(simulationNumberOfDays.value, initialNewMoonDate))
         let ordinalNumberInHebrewMonth: number = Number(new Intl.DateTimeFormat('he-u-ca-hebrew', {day:'numeric'}).format(currentGeorgianDate));
 
         // the young moon 1

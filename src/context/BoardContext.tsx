@@ -5,10 +5,16 @@ interface ICoordinates {
     y: number
 }
 
-interface IBoardContext {
-    simulationNumberOfDays: number;
+interface ISimulationNumber {
+    value: number, 
+    direction: string,
+    shiftType: string
+}
 
-    setSimulationNumberOfDays(simulationNumberOfDays: number): void;
+interface IBoardContext {
+    simulationNumberOfDays: ISimulationNumber;
+
+    setSimulationNumberOfDays(simulationNumberOfDays: ISimulationNumber): void;
     coordinates: ICoordinates;
     setCoordinates(coordinates: ICoordinates): void;
     earthAngleToSun: number, 
@@ -51,7 +57,7 @@ interface BoardContextProps {
 };
 
 const BoardContextProvider: FC<BoardContextProps> = (props) => {
-    const [simulationNumberOfDays, setSimulationNumberOfDays] = useState<number>(0);
+    const [simulationNumberOfDays, setSimulationNumberOfDays] = useState<ISimulationNumber>({value: 0, direction: "increase", shiftType: "day"});
 
     const [coordinates, setCoordinates] = useState<ICoordinates>({ x: 0, y:0 });
     const [earthAngleToSun, setEarthAngleToSun] = useState<number>(360);

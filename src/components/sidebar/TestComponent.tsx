@@ -17,7 +17,7 @@ const TestComponent = () => {
     } = useContext(BoardContext);
     const { t } = useTranslation();
 
-    const theMoonShiftDeegreesAccordintToTheNumberOfDays: number = simulationNumberOfDays * theNumberOfDegreesTheMoonMovesEachDayComparedToTheEarth
+    const theMoonShiftDeegreesAccordintToTheNumberOfDays: number = simulationNumberOfDays.value * theNumberOfDegreesTheMoonMovesEachDayComparedToTheEarth
 
     return (
         <div>
@@ -57,8 +57,8 @@ const TestComponent = () => {
                 <div> Current SIDERAL Moon-to-Earth angle: <b>{theMoonShiftDeegreesAccordintToTheNumberOfDays}</b> </div>
             </div> 
 
-            <p> sideral circle: {Math.abs(simulationNumberOfDays*theNumberOfDegreesTheMoonMovesEachDayComparedToTheEarth)} </p>
-            <p> synodic circle: {Math.abs(simulationNumberOfDays*theNumberOfDegreesTheMoonMovesEachDayAccordingToOurEyes)} </p>
+            <p> sideral circle: {Math.abs(simulationNumberOfDays.value*theNumberOfDegreesTheMoonMovesEachDayComparedToTheEarth)} </p>
+            <p> synodic circle: {Math.abs(simulationNumberOfDays.value*theNumberOfDegreesTheMoonMovesEachDayAccordingToOurEyes)} </p>
             
             <div>
                 <b> SYNODIC PERIOD: </b> 

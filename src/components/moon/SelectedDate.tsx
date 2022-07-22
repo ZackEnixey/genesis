@@ -19,8 +19,8 @@ const SelectedDate = () => {
     }, [simulationNumberOfDays]);
 
     const addDaysToInitialDate = () => {
-        setCurrentDate( dateToUtcStringCounterFromInitialDay(simulationNumberOfDays, initialNewMoonDate) );
-        let currentGeorgianDate = new Date(dateToUtcStringCounterFromInitialDay(simulationNumberOfDays, initialNewMoonDate));
+        setCurrentDate( dateToUtcStringCounterFromInitialDay(simulationNumberOfDays.value, initialNewMoonDate) );
+        let currentGeorgianDate = new Date(dateToUtcStringCounterFromInitialDay(simulationNumberOfDays.value, initialNewMoonDate));
         setCurrentHebrewDate( convertGeorginaDateToHebrewDate(currentGeorgianDate) );
     }
 
@@ -40,7 +40,7 @@ const SelectedDate = () => {
     }
 
     const setValuesAccordingToDate = () => {
-        setSimulationNumberOfDays(getNumberOfDaysBetweenTwoDates(initialNewMoonDate, selectedDateFromDatePicker));
+        setSimulationNumberOfDays({value: getNumberOfDaysBetweenTwoDates(initialNewMoonDate, selectedDateFromDatePicker), direction: "increase", shiftType: "day"});
         setEarthAngleToSun(getNumberOfDaysBetweenTwoDates(initialNewMoonDate, selectedDateFromDatePicker)*theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun);
     }
 
