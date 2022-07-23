@@ -15,7 +15,6 @@ const AdjustEarthToSunAngle = () => {
     const { t } = useTranslation();
 
     const increment = (numberOfDays: number) => {
-        console.log(Math.abs(numberOfDays));
         setTransitionTime(transitionTimeDic[ Math.abs(numberOfDays) ]);
         const newValue: number = simulationNumberOfDays.value - numberOfDays
         setSimulationNumberOfDays({value: newValue, direction: "increase", shiftType: shiftTypeDic[numberOfDays]});
@@ -23,7 +22,6 @@ const AdjustEarthToSunAngle = () => {
     }
 
     const decrement = (numberOfDays: number) => {
-        console.log(Math.abs(numberOfDays));
         setTransitionTime(transitionTimeDic[ Math.abs(numberOfDays) ]);
         const newValue: number = simulationNumberOfDays.value + numberOfDays
         setSimulationNumberOfDays({value: newValue, direction: "decrease", shiftType: shiftTypeDic[numberOfDays]});

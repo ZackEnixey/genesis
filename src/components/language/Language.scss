@@ -2,32 +2,14 @@
     position: absolute;
     right: 0;
     top: 0;
-    color: white;
-    border: 1px solid white;
-    padding: 10px;
     margin: 20px;
-    width: 250px;
-    background: rgba(59, 13, 52, 0.6);
-    z-index: 2;
 
-    .language_item {
-        margin: 5px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
+}
 
-        .language_flag {
-            width: 30px;
-            height: 30px;
-            margin: 5px 15px;
-        }
-    }
-
-    .language_item:hover {
-        margin: 5px;
-        background-color: rgba(95, 222, 239, 0.5);
-        cursor: pointer;
-    }
+.language_flag {
+    width: 20px;
+    height: 20px;
+    margin: 5px 15px;
 }
 
 .language_button {

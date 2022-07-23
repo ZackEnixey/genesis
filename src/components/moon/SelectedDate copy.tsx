@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { BoardContext } from "../../context";
+import {dateToUtcStringCounterFromInitialDay} from "./helper/index";
 
 const SelectedDate = () => {
     const { 
@@ -13,32 +14,17 @@ const SelectedDate = () => {
     const [currentDate, setCurrentDate] = useState<string>("Mon, 11 March 2022 07:15:00 GMT");
 
     useEffect( () => {
-        addDaysToInitialDate(simulationNumberOfDays.value)
+        setCurrentDate( dateToUtcStringCounterFromInitialDay(simulationNumberOfDays.value, initialNewMoonDate) );
     }, [simulationNumberOfDays])
 
     useEffect( () => {
-        updateOnTimePickedFromDatePicker();
+        setCurrentDate(dateToUtcString());
         calculateNumberOfDaysBetweenTwoDates();
     }, [selectedDateFromDatePicker]);
-
-    const updateOnTimePickedFromDatePicker = () => {
-        
-        setCurrentDate(dateToUtcString());
-    }
-
-    const addDaysToInitialDate = (additionalDays: number) => {
-        setCurrentDate( dateToUtcStringCounterFromInitialDay(additionalDays) );
-    }
 
     const dateToUtcString = () : string => {
         var result = new Date(selectedDateFromDatePicker);
         result.setDate(result.getDate());
-        return result.toUTCString()
-    }
-
-    const dateToUtcStringCounterFromInitialDay = (additionalDays: number) : string => {
-        var result = new Date(initialNewMoonDate);
-        result.setDate(result.getDate() + Math.abs(additionalDays));
         return result.toUTCString()
     }
 

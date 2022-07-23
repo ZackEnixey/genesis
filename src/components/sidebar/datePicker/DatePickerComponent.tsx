@@ -26,7 +26,6 @@ const DatePickerComponent = () => {
     }
 
     const processselectedDateFromDatePicker: DatePickerProps['onChange'] = (date, dateString) => {
-        console.log(date, dateString);
         if(!dateString) return;
 
         const selectedDateTypeDate: Date = new Date(dateString);

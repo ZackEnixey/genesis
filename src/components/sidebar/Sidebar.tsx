@@ -12,7 +12,7 @@ const Sidebar = () => {
     const isHorizontal = useUiUxPosition();
     const { t } = useTranslation();
     const [calendarType, setCalendarType] = useState<TCalendarType>("Gregorian");
-    
+
     const sidebarWrapperDic = {
         "BIG": "",
         "MEDIUM": "sidebar_wrapper_medium display_flex_center",

@@ -68,12 +68,12 @@ const BoardContextProvider: FC<BoardContextProps> = (props) => {
     const initialNewMoonDate: Date = new Date("March 11, 1940 20:17:00");
 
     const sideralPeriodNumberOfDays: number = 27.3215278
-    const synodicPeriodNumberOfDays: number = 29.53058770576;
+    const synodicPeriodNumberOfDays: number = 29.530588;
 
     // Degrees per Day
     const theNumberOfDegreesTheEarthMovesEachDayComparedToTheSun: number = 0.98562628336;  // 360 degrees / 365.25 days
     const theNumberOfDegreesTheMoonMovesEachDayComparedToTheEarth: number = 13.1764227;    // 360 degrees / 27days 7 hours 43min = 360 degrees / 27.3215278 days
-    const theNumberOfDegreesTheMoonMovesEachDayAccordingToOurEyes: number = 12.1907495911; // 360 degrees / 29.53058770576 days
+    const theNumberOfDegreesTheMoonMovesEachDayAccordingToOurEyes: number = 12.1907527722; // 360 degrees / 29.53058770576 days
     
     const [selectedDateFromDatePicker, setSelectedDateFromDatePicker] = useState<Date>(new Date());
     const [numberOfDaysBetweenTwoDates, setNumberOfDaysBetweenTwoDates] = useState<number>(0);
