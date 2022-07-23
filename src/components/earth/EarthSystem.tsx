@@ -11,6 +11,7 @@ const EarthSystem = () => {
         earthTrajectoryWidth, 
         earthTrajectoryHeight, 
         earthAngleToSun,
+        simulationNumberOfDays,
         transitionTime
     } = useContext(BoardContext);
 

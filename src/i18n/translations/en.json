@@ -6,9 +6,9 @@
         "selectTheLannguageYouLike": "select the language you would like:",
         
         "english": "English",
-        "french": "French",
-        "hebrew": "Hebrew",
-        "serbian": "Serbian",
+        "french": "Français",
+        "hebrew": "עִברִית",
+        "serbian": "Srpski",
 
         "input_x": "input x",
         "input_y": "input y",

@@ -5,10 +5,10 @@
         "welcomeToTheGame": "Bienvenue dans le jeu",
         "selectTheLannguageYouLike": "sélectionnez la langue souhaitée:",
         
-        "english": "Anglais",
+        "english": "English",
         "french": "Français",
-        "hebrew": "Hébreu",
-        "serbian": "Serbe",
+        "hebrew": "עִברִית",
+        "serbian": "Srpski",
 
         "input_x": "Entrez x",
         "input_y": "Entrez y",
