@@ -60,9 +60,9 @@ const SelectedDate = () => {
 
 
     return (
-        <div>
-            {hebrewDate()}
+        <div className="selected_date_wrapper">
             {georginaDate()}
+            {hebrewDate()}
         </div>
     )
 } 

@@ -4,40 +4,33 @@
     bottom: 10px;
     right: 10px;
 
-    width: 30vh;
-    height: 30vh;
-    border: 2px solid white;
+    width: 25vh;
+    height: 25vh;
 
     display: flex;
     justify-content: center;
     align-items: center;
-
-    .current_date {
-        position: absolute;
-        top: -40px;
-        left: 0;
-        color: white;
-        text-align: left;
-        font-weight: 600;
-    }
-    
-    .current_date_hebrew {
-        position: absolute;
-        top: -70px;
-        left: 0;
-        color: white;
-        text-align: left;
-        font-weight: 600;
-    }
-
 }
 
+.selected_date_wrapper {
+    position: absolute;
+    top: -65px;
+    right: 10px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+
+    text-align: right;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+}
 
 
 .moon {
     width: 24vh;
     height: 24vh;
-    border: 2px solid #ffffff;
     border-radius: 50%;
     position: absolute;
     background-image: url("../../assets/moonImg.png");

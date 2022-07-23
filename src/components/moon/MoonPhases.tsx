@@ -59,10 +59,20 @@ const MoonPhases = () => {
             )
         }
              
-        if (ordinalNumberInHebrewMonth > 22 && ordinalNumberInHebrewMonth <= 30) {
+        if (ordinalNumberInHebrewMonth > 22 && ordinalNumberInHebrewMonth <= 28) {
 
             let angle: number = 90 - 12.5*(ordinalNumberInHebrewMonth-23);
-            if (ordinalNumberInHebrewMonth === 29 ) angle = 90 - 12.5*(30-23)
+            if (angle > 85 && angle < 110) angle = 90;
+            return (
+                <div className="moon">
+                    <div className="right_hide"></div>
+                    <div className="disc4" style={{transform: `rotateY(${angle}deg)`}}></div>
+                </div>
+            )
+        }
+
+        if (ordinalNumberInHebrewMonth === 29 || ordinalNumberInHebrewMonth === 30) {
+            let angle: number = 90 - 12.5*(30-24)
             if (angle > 85 && angle < 110) angle = 90;
             return (
                 <div className="moon">
