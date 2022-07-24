@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { BoardContext } from "../../context";
+import useUiUxPosition from "../customHooks/useUiUxPosition";
 import { convertGeorginaDateToHebrewDate, dateToUtcStringCounterFromInitialDay, getNumberOfDaysBetweenTwoDates } from "./helper/index";
 
 const SelectedDate = () => {
@@ -46,9 +47,8 @@ const SelectedDate = () => {
 
     const formatedDate = () => {
         const theDate = new Date(currentDate);
-        return theDate.toDateString();
+        return theDate.toDateString().split(' ').slice(1).join(' ');
     }
-
 
     const georginaDate = () => {
         return <div className="current_date"> {formatedDate()} </div>;
