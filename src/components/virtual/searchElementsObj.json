@@ -2,20 +2,24 @@
     "searchElements": [
         { 
             "id": "111",
+            "height": "50",
             "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
             "searchElements": []
         },
         { 
             "id": "112",
+            "height": "90",
             "text": "some random text",
             "searchElements": [
                 { 
                     "id": "1121",
+                    "height": "50",
                     "text": "some random text",
                     "searchElements": []
                 },
                 { 
                     "id": "1122",
+                    "height": "50",
                     "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
                     "searchElements": []
                 }
@@ -23,34 +27,41 @@
         },
         { 
             "id": "113",
+            "height": "170",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "114",
+            "height": "30",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "115",
+            "height": "600",
             "text": "some random text",
             "searchElements": [
                 { 
                     "id": "1151",
+                    "height": "50",
                     "text": "some random text",
                     "searchElements": []
                 },
                 { 
                     "id": "1152",
+                    "height": "50",
                     "text": "some random text",
                     "searchElements": [
                         { 
                             "id": "11521",
+                            "height": "50",
                             "text": "some random text",
                             "searchElements": []
                         },
                         { 
                             "id": "11522",
+                            "height": "50",
                             "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
                             "searchElements": []
                         }
@@ -58,11 +69,13 @@
                 },
                 { 
                     "id": "1153",
+                    "height": "50",
                     "text": "some random text",
                     "searchElements": []
                 },
                 { 
                     "id": "1154",
+                    "height": "50",
                     "text": "some random text",
                     "searchElements": []
                 }
@@ -70,30 +83,36 @@
         },
         { 
             "id": "116",
+            "height": "70",
             "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
             "searchElements": []
         },
         { 
             "id": "117",
+            "height": "50",
             "text": "some random text",
             "searchElements": [
                 { 
                     "id": "1171",
+                    "height": "50",
                     "text": "some random text",
                     "searchElements": []
                 },
                 { 
                     "id": "1172",
+                    "height": "50",
                     "text": "some random text",
                     "searchElements": []
                 },
                 { 
                     "id": "1173",
+                    "height": "50",
                     "text": "some random text",
                     "searchElements": []
                 },
                 { 
                     "id": "1174",
+                    "height": "50",
                     "text": "some random text",
                     "searchElements": []
                 }
@@ -101,50 +120,60 @@
         },
         { 
             "id": "118",
+            "height": "40",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "119",
+            "height": "60",
             "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
             "searchElements": []
         },
         { 
             "id": "120",
+            "height": "50",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "121",
+            "height": "80",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "122",
+            "height": "50",
             "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
             "searchElements": []
         },
         { 
             "id": "123",
+            "height": "30",
             "text": "some random text",
             "searchElements": [
                 { 
                     "id": "1231",
+                    "height": "50",
                     "text": "some random text",
                     "searchElements": []
                 },
                 { 
                     "id": "1232",
+                    "height": "50",
                     "text": "some random text",
                     "searchElements": []
                 },
                 { 
                     "id": "1233",
+                    "height": "50",
                     "text": "some random text",
                     "searchElements": []
                 },
                 { 
                     "id": "1234",
+                    "height": "50",
                     "text": "some random text",
                     "searchElements": []
                 }
@@ -152,151 +181,181 @@
         },
         { 
             "id": "124",
+            "height": "40",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "125",
+            "height": "50",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "126",
+            "height": "80",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "127",
+            "height": "40",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "128",
+            "height": "50",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "129",
+            "height": "50",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "130",
+            "height": "50",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "131",
+            "height": "50",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "132",
+            "height": "50",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "133",
+            "height": "50",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "134",
+            "height": "50",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "134",
+            "height": "50",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "135",
+            "height": "50",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "136",
+            "height": "50",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "1347",
+            "height": "50",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "138",
+            "height": "50",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "139",
+            "height": "50",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "140",
+            "height": "50",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "141",
+            "height": "50",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "142",
+            "height": "50",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "143",
+            "height": "50",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "144",
+            "height": "50",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "145",
+            "height": "50",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "146",
+            "height": "50",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "147",
+            "height": "50",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "148",
+            "height": "50",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "149",
+            "height": "50",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "150",
+            "height": "50",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "151",
+            "height": "50",
             "text": "some random text",
             "searchElements": []
         },
         { 
             "id": "152",
+            "height": "50",
             "text": "some random text",
             "searchElements": []
         }

@@ -32,4 +32,11 @@
               }
         }
     }   
+
+    .item_wrapper {
+        width: 100%;
+        border: 1px solid red;
+        margin: 10px 0;
+        box-shadow: 0 0 5px 0 black;
+    }
 }
