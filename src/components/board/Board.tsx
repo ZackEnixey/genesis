@@ -4,8 +4,8 @@ import { BoardContext } from "../../context";
 import { PositionEnum } from "../../types";
 import useUiUxPosition from "../customHooks/useUiUxPosition";
 import AdjustEarthToSunAngle from "../sidebar/AdjustEarthToSunAngle";
-import Infinite from "../virtual/Infinite";
-import Virtual from "../virtual/Virtual";
+import Infinite from "../Virtual/Infinite";
+import Virtual from "../Virtual/Virtual";
 
 const Board = () => {
     const { toggleSidebar } = useContext(BoardContext);
