@@ -1,0 +1,26 @@
+.virtual {
+    width: 100vw;
+    height: 100vh;
+    background: rgb(210, 244, 210);
+    color: black;
+
+    ul {
+      width: 500px;
+      overflow-y: scroll;
+      list-style-type: none;
+      background: rgb(142, 209, 142);
+      border: 2px solid red;
+    }
+    
+    li:not(:last-child) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #000;
+      background: rgb(255, 157, 255);
+    }
+
+    li:nth-child(2n) {
+        background: rgb(255, 212, 255);
+      }
+}

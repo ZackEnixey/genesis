@@ -4,6 +4,7 @@ import { BoardContext } from "../../context";
 import { PositionEnum } from "../../types";
 import useUiUxPosition from "../customHooks/useUiUxPosition";
 import AdjustEarthToSunAngle from "../sidebar/AdjustEarthToSunAngle";
+import Virtual from "../virtual/Virtual";
 
 const Board = () => {
     const { toggleSidebar } = useContext(BoardContext);
@@ -13,6 +14,14 @@ const Board = () => {
         "BIG": "",
         "MEDIUM": "solar_system_medium_position",
         "SMALL": "solar_system_small_position"
+    }
+
+    if (window.location.href.includes("virtual")) {
+        return (
+            <div className="virtual">
+                <Virtual />
+            </div>
+        )
     }
 
     if (isHorizontal === PositionEnum.SMALL) 
