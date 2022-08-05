@@ -1,10 +1,9 @@
 import React, { useRef, useState } from 'react';
 import searchElementsObj from "./searchElementsObj.json";
 
+let oneItemHeight: number = 40;
 const Virtual = () => {
-    const liHeight: number = 40;
-    const viewSize: number = 10;
-    console.log("render");
+    const noOfViewedElements: number = 10;
     
     const searchElements = searchElementsObj.searchElements;
     const [startIndex, setStartIndex] = useState(0);
@@ -12,14 +11,18 @@ const Virtual = () => {
     const listInnerRef = useRef<any>(null);
     
     React.useEffect(() => {
-      setStartIndex(Math.floor(scrollTop / liHeight));
+        console.log("scrollTop: ", scrollTop);
+        console.log("start index: ", Math.floor(scrollTop / oneItemHeight));
+        let x = searchElements.reduce( (element: any, a: any) => {console.log(element);return null }, 0 );
+        console.log("x: ", x)
+        setStartIndex(Math.floor(scrollTop / oneItemHeight));
     }, [scrollTop]);
 
     const onScroll = () => { 
         const { scrollTop } = listInnerRef.current;
-        if (scrollTop) setScrollTop(scrollTop)
+        if (scrollTop) setScrollTop(scrollTop);
     }
-    
+
     return (
         <div className="virtual_wrapper">
             <div> Virtual </div>
@@ -29,12 +32,12 @@ const Virtual = () => {
                 onScroll={() => onScroll()} 
                 ref={listInnerRef}
             >
-                {searchElements.slice(startIndex, startIndex + viewSize).map((item, i) => (
-                <div className="child_item" style={{height: `${item.height}px`, transform: `translateY(${scrollTop}px)`}} key={i}>
-                    {item.id}
-                </div>
+                {searchElements.slice(startIndex, startIndex + noOfViewedElements).map((item, i) => (
+                    <div className="child_item" style={{height: `${item.height}px`, transform: `translateY(${scrollTop}px)`}} key={i}>
+                        {item.id}
+                    </div>
                 ))}
-                <div className="child_item" style={{height: (searchElements.length - viewSize) * liHeight}}></div>
+                <div className="child_item" style={{height: (searchElements.length - noOfViewedElements) * oneItemHeight}}></div>
             </div>
         </div>
     );
@@ -49,8 +52,8 @@ import React, { useRef, useState } from 'react';
 import searchElementsObj from "./searchElementsObj.json";
 
 const Virtual = () => {
-    const liHeight: number = 40;
-    const viewSize: number = 10;
+    const oneItemHeight: number = 40;
+    const noOfViewedElements: number = 10;
     const numberOfItems: number = 100;
     console.log("render");
 
@@ -60,7 +63,7 @@ const Virtual = () => {
     const listInnerRef = useRef<any>(null);
     
     React.useEffect(() => {
-      setStartIndex(Math.floor(scrollTop / liHeight));
+      setStartIndex(Math.floor(scrollTop / oneItemHeight));
     }, [scrollTop]);
 
     const onScroll = () => { 
@@ -73,16 +76,16 @@ const Virtual = () => {
             <div> Number of elements: {numberOfItems} </div>
             <div 
                 className="parent_wrapper"
-                style={{height: viewSize * liHeight}} 
+                style={{height: noOfViewedElements * oneItemHeight}} 
                 onScroll={() => onScroll()} 
                 ref={listInnerRef}
             >
-                {searchElements.slice(startIndex, startIndex + viewSize).map((item, i) => (
-                <div className="child_item" style={{height: liHeight, transform: `translateY(${scrollTop}px)`}} key={i}>
+                {searchElements.slice(startIndex, startIndex + noOfViewedElements).map((item, i) => (
+                <div className="child_item" style={{height: oneItemHeight, transform: `translateY(${scrollTop}px)`}} key={i}>
                     {item.id}
                 </div>
                 ))}
-                <div className="child_item" style={{height: (searchElements.length - viewSize) * liHeight}}></div>
+                <div className="child_item" style={{height: (searchElements.length - noOfViewedElements) * oneItemHeight}}></div>
             </div>
         </div>
     );

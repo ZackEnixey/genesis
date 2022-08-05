@@ -17,19 +17,32 @@ const Infinite = () => {
         if (listInnerRef.current) {
             const { scrollTop, scrollHeight, clientHeight } = listInnerRef.current;
             console.log({ scrollTop, scrollHeight, clientHeight });
+            
             if (scrollTop + clientHeight + 50 > scrollHeight && end < wholeArray.length) {
                 start = start + step;
                 end = end + step;
                 setArr(wholeArray.slice(start, end));
                 listInnerRef.current.scrollTo(250,250);
             }
+
+            if (scrollTop < 50 && start > 0) {
+                start = start - step;
+                end = end - step;
+                setArr(wholeArray.slice(start, end));
+                listInnerRef.current.scrollTo(250,250);
+            }
         }
     };
+
+    const colorDic: any = {
+        0: "grey",
+        1: "lightgrey"
+    }
 
     const renderArray = (array: any) => {
         console.log("current array:", array);
         return array.map( (item: any, i: number) => {
-            return <Item key={item?.id} orderNumber={item?.id} height={item?.height+1} />
+            return <Item key={item?.id} color={colorDic[i%2]} orderNumber={item?.id} height={item?.height+1} />
         })
     }    
 
