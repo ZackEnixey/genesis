@@ -18,18 +18,19 @@ const Virtual = () => {
     }
     
     return (
-      <ul 
+      <div 
+        className="parent_wrapper"
         style={{height: viewSize * liHeight}} 
         onScroll={() => onScroll()} 
         ref={listInnerRef}
     >
         {items.slice(startIndex, startIndex + viewSize).map((item, i) => (
-          <li style={{height: liHeight, transform: `translateY(${scrollTop}px)`}} key={i}>
+          <div className="child_item" style={{height: liHeight, transform: `translateY(${scrollTop}px)`}} key={i}>
             {item}
-          </li>
+          </div>
         ))}
-        <li style={{height: (items.length - viewSize) * liHeight}}></li>
-      </ul>
+        <div className="child_item" style={{height: (items.length - viewSize) * liHeight}}></div>
+      </div>
     );
 }
 
