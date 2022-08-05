@@ -1,9 +1,13 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState } from 'react';
+import searchElementsObj from "./searchElementsObj.json";
 
 const Virtual = () => {
-    const liHeight = 40;
-    const viewSize = 10;
-    const items = new Array(100).fill(0).map((x, i) => i + 1);
+    const liHeight: number = 40;
+    const viewSize: number = 10;
+    const numberOfItems: number = 100;
+    console.log("render");
+
+    const searchElements = searchElementsObj.searchElements;
     const [startIndex, setStartIndex] = useState(0);
     const [scrollTop, setScrollTop] = useState(0);
     const listInnerRef = useRef<any>(null);
@@ -18,19 +22,22 @@ const Virtual = () => {
     }
     
     return (
-      <div 
-        className="parent_wrapper"
-        style={{height: viewSize * liHeight}} 
-        onScroll={() => onScroll()} 
-        ref={listInnerRef}
-    >
-        {items.slice(startIndex, startIndex + viewSize).map((item, i) => (
-          <div className="child_item" style={{height: liHeight, transform: `translateY(${scrollTop}px)`}} key={i}>
-            {item}
-          </div>
-        ))}
-        <div className="child_item" style={{height: (items.length - viewSize) * liHeight}}></div>
-      </div>
+        <div className="virtual_wrapper">
+            <div> Number of elements: {numberOfItems} </div>
+            <div 
+                className="parent_wrapper"
+                style={{height: viewSize * liHeight}} 
+                onScroll={() => onScroll()} 
+                ref={listInnerRef}
+            >
+                {searchElements.slice(startIndex, startIndex + viewSize).map((item, i) => (
+                <div className="child_item" style={{height: liHeight, transform: `translateY(${scrollTop}px)`}} key={i}>
+                    {item.id}
+                </div>
+                ))}
+                <div className="child_item" style={{height: (searchElements.length - viewSize) * liHeight}}></div>
+            </div>
+        </div>
     );
 }
 

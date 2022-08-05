@@ -8,27 +8,28 @@
     justify-content: center;
     align-items: center;
 
-    .parent_wrapper {
-      width: 500px;
-      overflow-y: scroll;
-      list-style-type: none;
-      background: rgb(142, 209, 142);
-      border: 2px solid black;
-
-      .child_item:not(:last-child) {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid #000;
-        background: rgb(67, 67, 67);
-        color: white;
-        font-weight: 600;
-      }
-  
-      .child_item:nth-child(2n) {
-          background: rgb(98, 98, 98);
+    .virtual_wrapper {
+        
+        .parent_wrapper {
+            width: 500px;
+            overflow-y: scroll;
+            list-style-type: none;
+            background: rgb(142, 209, 142);
+            border: 2px solid black;
+      
+            .child_item:not(:last-child) {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 1px solid #000;
+              background: rgb(67, 67, 67);
+              color: white;
+              font-weight: 600;
+            }
+        
+            .child_item:nth-child(2n) {
+                background: rgb(98, 98, 98);
+              }
         }
-    }
-    
-    
+    }   
 }
