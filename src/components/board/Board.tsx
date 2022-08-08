@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { SolarSystem, Sidebar, MoonPhases, Language, CalendarVisualisation, PopUpSidebar } from "../";
 import { BoardContext } from "../../context";
 import { PositionEnum } from "../../types";
@@ -7,6 +7,7 @@ import AdjustEarthToSunAngle from "../sidebar/AdjustEarthToSunAngle";
 import DVS from "../virtual/DVS";
 import Infinite from "../virtual/Infinite";
 import Virtual from "../virtual/Virtual";
+import VirtualTiny from "../virtual/VirtualTiny";
 
 const Board = () => {
     const { toggleSidebar } = useContext(BoardContext);
@@ -23,9 +24,10 @@ const Board = () => {
         return (
             <div className="virtual">
                 <button style={{position: "absolute", top: 0, left: 0, zIndex: 2}}> virtual</button>
-                <Virtual />
-                <Infinite />
-                <DVS />
+                    <Virtual />
+                    <Infinite />
+                    <DVS />
+                    <VirtualTiny />
             </div>
         )
     }
