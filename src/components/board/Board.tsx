@@ -20,7 +20,7 @@ const Board = () => {
         "SMALL": "solar_system_small_position"
     }
 
-    if (virtual) {
+    if (false) {
         return (
             <div className="virtual">
                 <button style={{position: "absolute", top: 0, left: 0, zIndex: 2}}> virtual</button>
