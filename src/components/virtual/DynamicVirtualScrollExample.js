@@ -83,7 +83,7 @@ export default class DynamicVirtualScrollExample extends React.PureComponent {
                 right: this.state.scrollbarWidth+'px',
                 height: '30px',
                 background: '#0080c0',
-                color: 'white',
+        color: 'white',
                 textAlign: 'center',
                 lineHeight: '30px'}}>
                 fixed header
