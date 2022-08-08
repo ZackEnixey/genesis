@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/genesis/static/css/main.14d0458e.css",
-    "main.js": "/genesis/static/js/main.e8a9c5ef.js",
+    "main.css": "/genesis/static/css/main.b9234433.css",
+    "main.js": "/genesis/static/js/main.88fe0eec.js",
     "static/js/787.711141dc.chunk.js": "/genesis/static/js/787.711141dc.chunk.js",
     "static/media/sunImg.png": "/genesis/static/media/sunImg.b7cb42f8d0a3f32ee7bf.png",
     "static/media/moonImg.png": "/genesis/static/media/moonImg.dc7e9a55bef3581e3eca.png",
@@ -14,12 +14,12 @@
     "static/media/israel.png": "/genesis/static/media/israel.4e5dd3ad442b129dc871.png",
     "static/media/france.png": "/genesis/static/media/france.73f91b4e96d67f8a03f0.png",
     "index.html": "/genesis/index.html",
-    "main.14d0458e.css.map": "/genesis/static/css/main.14d0458e.css.map",
-    "main.e8a9c5ef.js.map": "/genesis/static/js/main.e8a9c5ef.js.map",
+    "main.b9234433.css.map": "/genesis/static/css/main.b9234433.css.map",
+    "main.88fe0eec.js.map": "/genesis/static/js/main.88fe0eec.js.map",
     "787.711141dc.chunk.js.map": "/genesis/static/js/787.711141dc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.14d0458e.css",
-    "static/js/main.e8a9c5ef.js"
+    "static/css/main.b9234433.css",
+    "static/js/main.88fe0eec.js"
   ]
 }
