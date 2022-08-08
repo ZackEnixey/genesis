@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { SolarSystem, Sidebar, MoonPhases, Language, CalendarVisualisation, PopUpSidebar } from "../";
 import { BoardContext } from "../../context";
 import { PositionEnum } from "../../types";
@@ -11,6 +11,7 @@ import Virtual from "../virtual/Virtual";
 const Board = () => {
     const { toggleSidebar } = useContext(BoardContext);
     const isHorizontal = useUiUxPosition();
+    const [virtual, setVirtual] = useState<boolean>(false);
 
     const sidebarWrapperStyleDic = {
         "BIG": "",
@@ -18,9 +19,10 @@ const Board = () => {
         "SMALL": "solar_system_small_position"
     }
 
-    if (window.location.href.includes("virtual")) {
+    if (virtual) {
         return (
             <div className="virtual">
+                <button style={{position: "absolute", top: 0, left: 0, zIndex: 2}} onClick={() => setVirtual(!virtual)}> virtual</button>
                 <Virtual />
                 <Infinite />
                 <DVS />
@@ -31,6 +33,7 @@ const Board = () => {
     if (isHorizontal === PositionEnum.SMALL) 
         return (
             <div className="board_wrapper">  
+            <button style={{position: "absolute", top: 0, left: 0, zIndex: 2}} onClick={() => setVirtual(!virtual)}> virtual</button>
                 <div className="purple_filter"></div>
                 <div className={`solar_system_and_calendar_wrapper_small ${sidebarWrapperStyleDic[isHorizontal]} `}>
                     <CalendarVisualisation />
@@ -47,6 +50,7 @@ const Board = () => {
     if (isHorizontal === PositionEnum.MEDIUM) 
         return (
             <div className="board_wrapper">  
+            <button style={{position: "absolute", top: 0, left: 0, zIndex: 2}} onClick={() => setVirtual(!virtual)}> virtual</button>
                 <div className="purple_filter"></div>
                 <div className={`solar_system_and_calendar_wrapper ${sidebarWrapperStyleDic[isHorizontal]} `}>
                     <CalendarVisualisation />
@@ -62,6 +66,7 @@ const Board = () => {
 
     return (
         <div className="board_wrapper">  
+            <button style={{position: "absolute", top: 0, left: 0, zIndex: 2}} onClick={() => setVirtual(!virtual)}> virtual</button>
             <div className="purple_filter"></div>
             <div className={`solar_system_and_calendar_wrapper ${sidebarWrapperStyleDic[isHorizontal]} `}>
                 <CalendarVisualisation />

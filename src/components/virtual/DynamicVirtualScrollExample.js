@@ -9,9 +9,10 @@ export default class DynamicVirtualScrollExample extends React.PureComponent {
     {
         super();
         const items = [];
-        for (let i = 0; i < searchElementsObj.searchElements.length; i++)
+        const inputArray = searchElementsObj.searchElements;
+        for (let i = 0; i < inputArray.length; i++)
         {
-            items[i] = 30 + Math.round(Math.random()*50);
+            items[i] = inputArray[i];
         }
         this.state = { items };
     }
@@ -22,7 +23,7 @@ export default class DynamicVirtualScrollExample extends React.PureComponent {
         if (index >= this.state.firstMiddleItem && index < this.state.firstMiddleItem+this.state.middleItemCount ||
             index >= this.state.items.length - this.state.lastItemCount)
         {
-            return this.state.items[index];
+            return this.state.items[index].height;
         }
         return 0;
     }
@@ -44,8 +45,8 @@ export default class DynamicVirtualScrollExample extends React.PureComponent {
         return this.state.items.slice(start, start+count).map((item, index) => (<div
             key={'i'+(index+start)}
             ref={e => this.itemElements[index+start] = e}
-            style={{height: item+'px', color: 'white', textAlign: 'center', lineHeight: item+'px', background: 'rgb('+Math.round(item*255/80)+',0,0)'}}>
-            № {index+start}: {item}px
+            style={{height: item.height+'px', color: 'white', textAlign: 'center', lineHeight: item.height+'px', background: 'rgb('+Math.round(item.height*255/80)+',0,0)'}}>
+            № {index+start}: {item.height}px
         </div>));
     }
 
@@ -53,7 +54,7 @@ export default class DynamicVirtualScrollExample extends React.PureComponent {
     {
         this.itemElements = [];
         return (<div style={{position: 'relative', width: '400px'}}>
-            <div style={{overflowY: 'scroll', height: '400px', width: '400px', overflowAnchor: 'none', outline: 'none'}}
+            <div style={{overflowY: 'scroll', height: '600px', width: '400px', overflowAnchor: 'none', outline: 'none'}}
                 tabIndex="1"
                 ref={e => this.viewport = e}
                 onScroll={this.driver}>
