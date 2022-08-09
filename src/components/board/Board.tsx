@@ -12,7 +12,7 @@ import VirtualTiny from "../virtual/VirtualTiny";
 const Board = () => {
     const { toggleSidebar } = useContext(BoardContext);
     const isHorizontal = useUiUxPosition();
-    const virtual = true
+    const [virtual, setVirtual] = useState<boolean>(false);
 
     const sidebarWrapperStyleDic = {
         "BIG": "",
@@ -20,14 +20,13 @@ const Board = () => {
         "SMALL": "solar_system_small_position"
     }
 
-    if (false) {
+    if (virtual) {
         return (
             <div className="virtual">
-                <button style={{position: "absolute", top: 0, left: 0, zIndex: 2}}> virtual</button>
+                <button style={{position: "absolute", top: 0, left: 0, zIndex: 2}} onClick={() => setVirtual(!virtual)}> virtual</button>
                     <Virtual />
                     <Infinite />
                     <DVS />
-                    <VirtualTiny />
             </div>
         )
     }
@@ -35,7 +34,7 @@ const Board = () => {
     if (isHorizontal === PositionEnum.SMALL) 
         return (
             <div className="board_wrapper">  
-            <button style={{position: "absolute", top: 0, left: 0, zIndex: 2}}> virtual</button>
+            <button style={{position: "absolute", top: 0, left: 0, zIndex: 2}} onClick={() => setVirtual(!virtual)}> virtual</button>
                 <div className="purple_filter"></div>
                 <div className={`solar_system_and_calendar_wrapper_small ${sidebarWrapperStyleDic[isHorizontal]} `}>
                     <CalendarVisualisation />
@@ -52,7 +51,7 @@ const Board = () => {
     if (isHorizontal === PositionEnum.MEDIUM) 
         return (
             <div className="board_wrapper">  
-            <button style={{position: "absolute", top: 0, left: 0, zIndex: 2}}> virtual</button>
+            <button style={{position: "absolute", top: 0, left: 0, zIndex: 2}} onClick={() => setVirtual(!virtual)}> virtual</button>
                 <div className="purple_filter"></div>
                 <div className={`solar_system_and_calendar_wrapper ${sidebarWrapperStyleDic[isHorizontal]} `}>
                     <CalendarVisualisation />
@@ -68,7 +67,7 @@ const Board = () => {
 
     return (
         <div className="board_wrapper">  
-            <button style={{position: "absolute", top: 0, left: 0, zIndex: 2}}> virtual</button>
+            <button style={{position: "absolute", top: 0, left: 0, zIndex: 2}} onClick={() => setVirtual(!virtual)}> virtual</button>
             <div className="purple_filter"></div>
             <div className={`solar_system_and_calendar_wrapper ${sidebarWrapperStyleDic[isHorizontal]} `}>
                 <CalendarVisualisation />
