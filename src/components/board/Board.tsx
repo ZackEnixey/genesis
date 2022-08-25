@@ -4,6 +4,7 @@ import { BoardContext } from "../../context";
 import { PositionEnum } from "../../types";
 import useUiUxPosition from "../customHooks/useUiUxPosition";
 import AdjustEarthToSunAngle from "../sidebar/AdjustEarthToSunAngle";
+import AuditingSupport from "../virtual/auditingSupport/AuditingSupport";
 import DVS from "../virtual/DVS";
 import Infinite from "../virtual/Infinite";
 import Virtual from "../virtual/Virtual";
@@ -20,13 +21,14 @@ const Board = () => {
         "SMALL": "solar_system_small_position"
     }
 
-    if (virtual) {
+    if (true) {
         return (
             <div className="virtual">
                 <button style={{position: "absolute", top: 0, left: 0, zIndex: 2}} onClick={() => setVirtual(!virtual)}> virtual</button>
-                    <Virtual />
+                    {/* <Virtual />
                     <Infinite />
-                    <DVS />
+                    <DVS /> */}
+                    <AuditingSupport />
             </div>
         )
     }
