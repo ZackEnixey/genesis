@@ -26,7 +26,7 @@ const CalendarVisualisation = () => {
 
     return (
         <div className="calendar_visualisation_wrapper">
-            <img style={{transform: `rotate(${-hebrewMonthErrorShift}deg)`, transition: transitionTime}} src={hebrewMonths} alt="english" className={calendarSizeDic[isHorizontal]} />
+            <img style={{transform: `rotate(${-hebrewMonthErrorShift}deg)`, left: "-27px", transition: transitionTime}} src={hebrewMonths} alt="english" className={calendarSizeDic[isHorizontal]} />
             <img src={seasonsAndMonths} alt="english" style={{transition: transitionTime}} className={calendarSizeDic[isHorizontal]} />
         </div>
     )

@@ -30,21 +30,18 @@
     overflow: hidden; 
     
     .sun_image_big {
-        width: 20vh;
-        height: 20vh;
-        z-index: 1;
+        width: 68vh;
+        height: 68vh;
     }
     
     .sun_image_small {
-        width: 20vw;
-        height: 20vw;
-        z-index: 1;
+        width: 67vw;
+        height: 67vw;
     }
 
     .sun_image_narrow {
-        width: 20vw;
-        height: 20vw;
-        z-index: 1;
+        width: 68vh;
+        height: 68vh;
     }
 }
 
@@ -60,7 +57,7 @@
     .earth_trajectory_surface {
         height: 200px;
         width: 600px;  
-        border: 5px solid gold;
+        // border: 5px solid gold;
         border-radius: 50%;
         position: absolute;
     }
