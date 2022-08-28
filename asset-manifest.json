@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/genesis/static/css/main.7eb52679.css",
-    "main.js": "/genesis/static/js/main.2f3241d3.js",
+    "main.css": "/genesis/static/css/main.697b811b.css",
+    "main.js": "/genesis/static/js/main.ba00b08e.js",
     "static/js/787.711141dc.chunk.js": "/genesis/static/js/787.711141dc.chunk.js",
-    "static/media/sunImg.png": "/genesis/static/media/sunImg.b7cb42f8d0a3f32ee7bf.png",
+    "static/media/sunImg.png": "/genesis/static/media/sunImg.41252b886b8446f05fe6.png",
+    "static/media/seasonsAndMonths.png": "/genesis/static/media/seasonsAndMonths.149d0962176c84a9609e.png",
+    "static/media/hebrewMonths.png": "/genesis/static/media/hebrewMonths.182906de43a10f06875c.png",
     "static/media/moonImg.png": "/genesis/static/media/moonImg.dc7e9a55bef3581e3eca.png",
     "static/media/earthImg.png": "/genesis/static/media/earthImg.0d24e045a1f839da71db.png",
-    "static/media/seasonsAndMonths.png": "/genesis/static/media/seasonsAndMonths.3097e229fe2bf9396323.png",
-    "static/media/hebrewMonths.png": "/genesis/static/media/hebrewMonths.7f8e0d9012a2ce8234ae.png",
     "static/media/skyImg.jpg": "/genesis/static/media/skyImg.348d31d950ba368cc3b7.jpg",
     "static/media/america.png": "/genesis/static/media/america.4d9d990626a3df96a265.png",
     "static/media/serbia.png": "/genesis/static/media/serbia.6c08d42318d8ab7228d7.png",
     "static/media/israel.png": "/genesis/static/media/israel.4e5dd3ad442b129dc871.png",
     "static/media/france.png": "/genesis/static/media/france.73f91b4e96d67f8a03f0.png",
     "index.html": "/genesis/index.html",
-    "main.7eb52679.css.map": "/genesis/static/css/main.7eb52679.css.map",
-    "main.2f3241d3.js.map": "/genesis/static/js/main.2f3241d3.js.map",
+    "main.697b811b.css.map": "/genesis/static/css/main.697b811b.css.map",
+    "main.ba00b08e.js.map": "/genesis/static/js/main.ba00b08e.js.map",
     "787.711141dc.chunk.js.map": "/genesis/static/js/787.711141dc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7eb52679.css",
-    "static/js/main.2f3241d3.js"
+    "static/css/main.697b811b.css",
+    "static/js/main.ba00b08e.js"
   ]
 }
