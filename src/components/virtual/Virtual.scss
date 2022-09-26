@@ -5,8 +5,10 @@
     color: black;
 
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-flow: row wrap;
+    align-content: space-between;
+    justify-content: space-between;
+
 
     .virtual_wrapper {
         
@@ -39,4 +41,40 @@
         margin: 10px 0;
         box-shadow: 0 0 5px 0 black;
     }
+}
+
+.test_parser {
+    background-color: white;
+    color: black;
+}
+
+.audit_item {
+    text-align: left;
+    cursor: pointer;
+}
+
+
+
+.audit_time:hover {
+    color: red;
+}
+.audit_type:hover {
+    background-color: darkslategrey;
+    color: gold;
+}
+.audit_title:hover {
+    background-color: rgb(252, 252, 165);
+    color: blue;
+}
+.audit_description:hover {
+    background-color: white;
+    color: purple;
+}
+.audit_arrays:hover {
+    background-color: red;
+    color: white;
+}
+.audit_rest:hover {
+    background-color: blue;
+    color: white;
 }
