@@ -7,6 +7,7 @@ import AdjustEarthToSunAngle from "../sidebar/AdjustEarthToSunAngle";
 import AuditingSupport from "../virtual/auditingSupport/AuditingSupport";
 import DVS from "../virtual/DVS";
 import Infinite from "../virtual/Infinite";
+import Lded from "../virtual/Lded/Lded";
 import Virtual from "../virtual/Virtual";
 import VirtualTiny from "../virtual/VirtualTiny";
 
@@ -21,17 +22,19 @@ const Board = () => {
         "SMALL": "solar_system_small_position"
     }
 
-    if (true) {
-        return (
-            <div className="virtual">
-                <button style={{position: "absolute", top: 0, left: 0, zIndex: 2}} onClick={() => setVirtual(!virtual)}> virtual</button>
-                    {/* <Virtual />
-                    <Infinite />
-                    <DVS /> */}
-                    <AuditingSupport />
-            </div>
-        )
-    }
+   
+    return (
+        <div className="virtual">
+            HELLO :/
+            <button style={{position: "absolute", top: 0, left: 0, zIndex: 2}} onClick={() => setVirtual(!virtual)}> virtual</button>
+                {/* <Virtual />
+                <Infinite />
+                <DVS />
+                <AuditingSupport /> */}
+                <Lded />
+        </div>
+    )
+  
 
     if (isHorizontal === PositionEnum.SMALL) 
         return (
