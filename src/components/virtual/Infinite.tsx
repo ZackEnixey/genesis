@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Item from './Item';
-import ReactDOM from 'react-dom';
 import Draggable from 'react-draggable';
+
 import searchElementsObj from "./searchElementsObj.json";
 
 const step: number = 1;

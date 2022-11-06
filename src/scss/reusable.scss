@@ -43,6 +43,18 @@
     align-items: flex-start;
 }
 
+.parent_wrapper{
+    border: 1px solid red;
+    padding: 5px;
+}
+
+
+.display_left {
+    display: flex;
+    justify-content: left;
+    cursor: pointer;
+}
+
 .margin_top_space {
     margin-top: 20px;
 }

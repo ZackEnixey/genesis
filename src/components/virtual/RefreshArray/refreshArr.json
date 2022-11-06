@@ -1,53 +1,53 @@
 [
     {
         "id": "723684a8-6a69-4bcc-8d2d-235c8662d726",
-        "type": "TERM_TEXT_SEARCH_ELEMENT"
+        "name": "Zoran1"
     },
     {
         "id": "fef14a16-e5d2-469e-9962-394222c3f8dd",
-        "type": "TERM_TEXT_SEARCH_ELEMENT"
+        "name": "Zoran2"
     },
     {
         "id": "3382ad07-7035-4f11-baf5-984b873db815",
-        "type": "TERM_TEXT_SEARCH_ELEMENT"
+        "name": "Zoran3"
     },
     {
         "id": "863b52eb-da0c-4fae-9329-1c129632b4da",
-        "type": "SIMPLE_GROUP_SEARCH_ELEMENT",
+        "name": "Marko1",
         "children": [
             {
                 "id": "9f061f9b-4dbc-436b-a55c-5edfed207f8b",
-                "type": "TERM_TEXT_SEARCH_ELEMENT"
+                "name": "Zoran4"
             },
             {
                 "id": "1b1d6184-1175-41a1-9d3b-5c7c0d753298",
-                "type": "TERMS_SEQUENCE_TEXT_SEARCH_ELEMENT"
+                "name": "TERMS_SEQUENCE_TEXT_SEARCH_ELEMENT"
             },
             {
                 "id": "53e52934-b654-4e85-984d-b895968a92c1",
-                "type": "SIMPLE_GROUP_SEARCH_ELEMENT",
+                "name": "Marko2",
                 "children": [
                     {
                         "id": "9f061f9b-4dbc-436b-a55c-5edfed207f82",
-                        "type": "TERM_TEXT_SEARCH_ELEMENT"
+                        "name": "Zoran5"
                     },
                     {
                         "id": "1b1d6184-1175-41a1-9d3b-5c7c0d753293",
-                        "type": "TERMS_SEQUENCE_TEXT_SEARCH_ELEMENT"
+                        "name": "Tea1"
                     },
                     {
                         "id": "53e52934-b654-4e85-984d-b895968a9244",
-                        "type": "SIMPLE_GROUP_SEARCH_ELEMENT",
+                        "name": "Marko3",
                         "children": [
                             {
                                 "id": "01127359-67fb-4351-9707-341d7c4b2f55",
-                                "type": "ALPHABET_SEARCH_ELEMENT"
+                                "name": "Zarko1"
                             }
                         ]
                     },
                     {
                         "id": "1b1d6184-1175-41a1-9d3b-5c7c0d753998",
-                        "type": "TERMS_SEQUENCE_TEXT_SEARCH_ELEMENT"
+                        "name": "Pera5"
                     }
                 ]
             }
