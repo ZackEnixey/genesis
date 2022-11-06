@@ -8,6 +8,7 @@ import AuditingSupport from "../virtual/auditingSupport/AuditingSupport";
 import DVS from "../virtual/DVS";
 import Infinite from "../virtual/Infinite";
 import Lded from "../virtual/Lded/Lded";
+import RefreshArray from "../virtual/RefreshArray/RefreshArray";
 import Virtual from "../virtual/Virtual";
 import VirtualTiny from "../virtual/VirtualTiny";
 
@@ -32,6 +33,7 @@ const Board = () => {
                 <DVS />
                 <AuditingSupport /> */}
                 <Lded />
+                <RefreshArray />
         </div>
     )
   
