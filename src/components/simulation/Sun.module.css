@@ -1,0 +1,40 @@
+.sun {
+  filter: drop-shadow(0 0 1.5px rgb(255 170 60 / 0.6));
+}
+
+.corona,
+.rays {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.corona {
+  animation: corona-pulse 6s ease-in-out infinite;
+}
+
+.rays {
+  animation: rays-turn 120s linear infinite;
+}
+
+.wordmark {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+}
+
+@keyframes corona-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+}
+
+@keyframes rays-turn {
+  to {
+    transform: rotate(360deg);
+  }
+}

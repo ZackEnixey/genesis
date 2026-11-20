@@ -1,0 +1,121 @@
+.view {
+  container-type: size;
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Keeps the drawing's 1000 × 620 proportions so the HTML layers line up with it. */
+.canvas {
+  position: relative;
+  width: min(100cqw, calc(100cqh * 1000 / 620));
+  aspect-ratio: 1000 / 620;
+}
+
+.drawing {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  overflow: visible;
+  view-transition-name: genesis-calendar;
+}
+
+.monthLabel {
+  fill: #e8f2ff;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  paint-order: stroke;
+  stroke: rgb(11 16 32 / 0.6);
+  stroke-width: 3px;
+}
+
+.newMoon {
+  fill: var(--color-accent);
+  filter: drop-shadow(0 0 3px rgb(245 181 68 / 0.9));
+}
+
+.hebrewLabel {
+  fill: var(--color-accent);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  paint-order: stroke;
+  stroke: rgb(11 16 32 / 0.7);
+  stroke-width: 3px;
+}
+
+.sun,
+.earth,
+.moon {
+  position: absolute;
+  translate: -50% -50%;
+  border-radius: 50%;
+}
+
+.sun {
+  width: 9%;
+  aspect-ratio: 1;
+  view-transition-name: genesis-sun;
+}
+
+.sun svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  overflow: visible;
+}
+
+.earth {
+  width: 9.5%;
+  aspect-ratio: 1;
+  z-index: 2;
+  view-transition-name: genesis-earth;
+  filter: drop-shadow(0 0 12px rgb(110 180 255 / 0.5));
+}
+
+.moon {
+  width: 3%;
+  aspect-ratio: 1;
+  z-index: 3;
+  view-transition-name: genesis-moon;
+}
+
+.fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.earthIdle {
+  width: 100%;
+  height: 100%;
+  animation: earth-idle 60s linear infinite;
+}
+
+/* Tidally locked: the Moon turns so the same side faces the Earth. */
+.moonBody {
+  width: 100%;
+  height: 100%;
+  transform: rotate(var(--moon-turn, 0deg));
+}
+
+/* Night side, turned away from the Sun. */
+.shade {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  transform: rotate(var(--shade-angle, 0deg));
+  background: linear-gradient(to bottom, rgb(2 6 20 / 0.85) 0%, rgb(2 6 20 / 0.6) 38%, rgb(2 6 20 / 0.15) 52%, transparent 60%);
+  pointer-events: none;
+}
+
+@keyframes earth-idle {
+  to {
+    transform: rotate(-360deg);
+  }
+}

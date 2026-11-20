@@ -1,0 +1,179 @@
+.app {
+  position: relative;
+  z-index: 1; /* above the starfield */
+  overflow: clip; /* the rising Sun continues below the page without adding scroll */
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+/* Mobile first: one column, intro, model, summary, then the stepper toolbar. */
+.main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "intro"
+    "stage"
+    "summary"
+    "stepper";
+  gap: var(--space-5);
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-4) 0;
+  flex: 1;
+}
+
+.panel {
+  display: contents;
+}
+
+/* The About page scrolls inside the window-height app on desktop. */
+.aboutMain {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.intro {
+  grid-area: intro;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.title {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.lead {
+  max-width: 34rem;
+  color: var(--color-text-muted);
+  text-wrap: pretty;
+}
+
+.cta {
+  margin-top: var(--space-2);
+}
+
+.summary {
+  grid-area: summary;
+}
+
+.stage {
+  grid-area: stage;
+  position: relative;
+  z-index: 1; /* above the Sun's glow */
+  /* Full-bleed on small screens: the model reserves room for the Earth's orbit. */
+  width: calc(100% + 2 * var(--space-4));
+  margin-inline: calc(-1 * var(--space-4));
+  aspect-ratio: 1;
+  max-height: 80dvh;
+  justify-self: center;
+}
+
+.stepperDock {
+  grid-area: stepper;
+  position: relative;
+}
+
+.stepper {
+  position: relative; /* paints over the Sun behind it */
+}
+
+/* Phones and tablets: the dock (with the Sun) is the sticky bottom toolbar. */
+@media (max-width: 1023px) {
+  .stepperDock {
+    position: sticky;
+    bottom: 0;
+    z-index: var(--z-sticky);
+  }
+}
+
+/*
+ * Desktop: the whole app fits the window. The side panel scrolls on its own if it is
+ * taller than the window, so the model and the time controls are always visible.
+ */
+@media (min-width: 1024px) {
+  .app {
+    height: 100dvh;
+    min-height: 32rem;
+  }
+
+  .main {
+    grid-template-columns: var(--panel-width) minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "panel stage"
+      "panel stepper";
+    column-gap: var(--space-8);
+    row-gap: var(--space-4);
+    min-height: 0;
+    padding: var(--space-6);
+  }
+
+  .panel {
+    grid-area: panel;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    /* Room for focus rings and card shadows inside the scroll area */
+    margin: calc(-1 * var(--space-2));
+    padding: var(--space-2);
+    scrollbar-width: thin;
+    scrollbar-color: rgb(255 255 255 / 0.2) transparent;
+  }
+
+  .stage {
+    width: 100%;
+    margin-inline: 0;
+    aspect-ratio: auto;
+    max-height: none;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .stepperDock {
+    justify-self: center;
+    width: min(100%, 40rem);
+  }
+}
+
+/* Shorter desktop windows (e.g. laptops at 125% zoom): tighten the panel. */
+@media (min-width: 1024px) and (max-height: 860px) {
+  .main {
+    padding: var(--space-4) var(--space-6);
+    row-gap: var(--space-3);
+  }
+
+  .panel {
+    gap: var(--space-4);
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .lead {
+    font-size: var(--text-sm);
+  }
+
+  .summary {
+    --moon-phase-size: 4rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .main {
+    --panel-width: 24rem;
+    column-gap: var(--space-12);
+  }
+}

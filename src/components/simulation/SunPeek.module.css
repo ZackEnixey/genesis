@@ -1,0 +1,33 @@
+/*
+ * Positioned inside the time-stepper dock. In the SVG the Sun's disc is 72.2% of the
+ * width and starts 13.9% from the top. The offset below leaves one seventh of the disc
+ * above the bottom of the page; the rest is clipped by the app.
+ *   --dock-gap  distance from the dock to the bottom of the page
+ */
+.sun {
+  --sun-w: min(46rem, 70vw);
+  position: absolute;
+  left: 50%;
+  bottom: calc(-0.758 * var(--sun-w) - var(--dock-gap, 1.5rem));
+  width: var(--sun-w);
+  height: var(--sun-w);
+  max-width: none;
+  translate: -50% 0;
+  overflow: visible;
+  pointer-events: none;
+  view-transition-name: genesis-sun;
+}
+
+@media (max-width: 1023px) {
+  .sun {
+    --sun-w: min(36rem, 115vw);
+    --dock-gap: 0px;
+  }
+}
+
+/* Shorter desktop windows use a smaller page margin. */
+@media (min-width: 1024px) and (max-height: 860px) {
+  .sun {
+    --dock-gap: 1rem;
+  }
+}

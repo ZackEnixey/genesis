@@ -1,65 +1,53 @@
 {
-  "homepage": "https://ZackEnixey.github.io/genesis",
   "name": "genesis",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
-  "dependencies": {
-    "@tanstack/react-virtual": "^3.0.0-alpha.0",
-    "@testing-library/jest-dom": "^5.16.3",
-    "@testing-library/react": "^12.1.4",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.0",
-    "@types/node": "^16.11.33",
-    "@types/react": "^18.0.14",
-    "@types/react-datepicker": "^4.4.2",
-    "@types/react-dom": "^18.0.3",
-    "antd": "^4.21.6",
-    "axios": "^0.24.0",
-    "html-react-parser": "^3.0.1",
-    "i18next": "^21.8.10",
-    "i18next-browser-languagedetector": "^6.1.4",
-    "react": "^17.0.2",
-    "react-datepicker": "^4.8.0",
-    "react-dom": "^17.0.2",
-    "react-draggable": "^4.4.5",
-    "react-dynamic-virtual-scroll": "^1.3.2",
-    "react-i18next": "^11.17.2",
-    "react-rnd": "^10.3.7",
-    "react-scripts": "5.0.1",
-    "react-tiny-virtual-list": "^2.2.0",
-    "react-virtual": "^2.10.4",
-    "sass": "^1.52.3",
-    "typescript": "^4.6.4",
-    "web-vitals": "^2.1.4"
+  "type": "module",
+  "description": "Discover your Hebrew birthday and see how the Moon looked on the day you were born.",
+  "engines": {
+    "node": ">=22.18"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "vite --open",
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -b",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "verify:hebrew": "node scripts/verify-hebrew-conversion.mjs",
+    "package": "npm run build && node scripts/package-site.mjs",
+    "deploy:github": "node scripts/deploy-github.mjs"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "i18next": "^27.2.2",
+    "i18next-browser-languagedetector": "^8.3.1",
+    "lucide-react": "^1.76.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-i18next": "^18.0.3"
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0",
-    "gulp-sass": "^5.1.0"
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.65.1",
+    "@testing-library/jest-dom": "^8.0.0",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.13",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "eslint": "^10.15.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.8",
+    "gh-pages": "^6.3.0",
+    "globals": "^17.14.0",
+    "jsdom": "^31.0.1",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.73.0",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.1"
   }
 }

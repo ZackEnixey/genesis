@@ -1,0 +1,165 @@
+/*
+ * All sizes are in "u": 1/96 of the square stage. The proportions are the original
+ * 2022 ones (which were in vh), so the model looks the same at any screen size.
+ *   Earth orbit radius 34u (outer edge of the seasons ring) · Earth 9.5u
+ *   Moon orbit box 20u · Moon 3u. The rings and the Sun are an SVG in the same units.
+ */
+.stage {
+  container-type: size;
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.square {
+  --u: calc(min(100cqw, 100cqh) / 96);
+  --sim-transition: transform var(--transition, 0s) ease-out;
+  position: relative;
+  width: min(100cqw, 100cqh);
+  height: min(100cqw, 100cqh);
+  user-select: none;
+}
+
+.orrery {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.sunLayer {
+  width: calc(36 * var(--u));
+  height: calc(36 * var(--u));
+  max-width: none;
+  overflow: visible;
+  view-transition-name: genesis-sun;
+}
+
+/* Shared names let the browser morph these into the horizontal view. */
+.orrery {
+  view-transition-name: genesis-calendar;
+}
+
+.orbitPath {
+  fill: none;
+  stroke: rgb(255 255 255 / 0.12);
+  stroke-width: 0.15;
+}
+
+.centered {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.orbitArm {
+  width: calc(68 * var(--u));
+  height: 0;
+  transform: translate(-50%, -50%) rotate(var(--earth-orbit));
+  transition: var(--sim-transition);
+}
+
+/* Sunlight line from the Earth towards the Sun */
+.orbitArm::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -0.75px;
+  width: calc(34 * var(--u));
+  height: 1.5px;
+  background: linear-gradient(to right, rgb(245 181 68 / 0.85), rgb(245 181 68 / 0.15) 70%, transparent);
+}
+
+.earthAnchor {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.earthUpright,
+.earthNightSide {
+  position: absolute;
+  left: calc(-4.75 * var(--u));
+  top: calc(-4.75 * var(--u));
+  width: calc(9.5 * var(--u));
+  height: calc(9.5 * var(--u));
+  border-radius: 50%;
+}
+
+.earthUpright {
+  view-transition-name: genesis-earth;
+  transform: rotate(var(--earth-orbit-inverse));
+  transition: var(--sim-transition);
+}
+
+/* Same direction as the real rotation seen from above the North Pole (counter-clockwise). */
+.earthIdle {
+  width: 100%;
+  height: 100%;
+  animation: earth-idle 60s linear infinite;
+}
+
+@keyframes earth-idle {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.earth {
+  display: block;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 calc(0.8 * var(--u)) rgb(110 180 255 / 0.45));
+  transform: rotate(var(--earth-spin));
+  transition: var(--sim-transition);
+}
+
+/* Night side always faces away from the Sun because it turns with the arm. */
+.earthNightSide {
+  transform: rotate(-40deg);
+  box-shadow: inset calc(8 * var(--u)) calc(6 * var(--u)) calc(2 * var(--u)) calc(-6 * var(--u)) rgb(0 0 0 / 0.8);
+}
+
+.moonOrbit {
+  position: absolute;
+  left: calc(-10 * var(--u));
+  top: calc(-10 * var(--u));
+  width: calc(20 * var(--u));
+  height: calc(20 * var(--u));
+  transform: rotate(var(--moon-orbit));
+  transition: var(--sim-transition);
+}
+
+.moon {
+  view-transition-name: genesis-moon;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(3 * var(--u));
+  height: calc(3 * var(--u));
+}
+
+.moonImage,
+.moonNightSide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: var(--sim-transition);
+}
+
+.moonNightSide {
+  transform: rotate(calc(var(--moon-orbit-inverse) - 30deg));
+  box-shadow: inset calc(2 * var(--u)) var(--u) var(--u) calc(-1 * var(--u)) rgb(0 0 0 / 0.8);
+}
+
+/* Leap-month badge: centred near the bottom of the model. */
+.leapBadge {
+  bottom: 4%;
+}
