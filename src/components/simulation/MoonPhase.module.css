@@ -1,0 +1,13 @@
+.moon {
+  flex: none;
+  width: var(--moon-phase-size, 5.5rem);
+  height: var(--moon-phase-size, 5.5rem);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 18px rgb(220 225 255 / 0.18));
+}
+
+.rim {
+  fill: none;
+  stroke: rgb(255 255 255 / 0.08);
+  stroke-width: 1;
+}

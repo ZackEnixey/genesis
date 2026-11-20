@@ -1,0 +1,172 @@
+/* A paper certificate: ivory, gold double border, serif lettering. */
+.certificate {
+  --ink: #1f2547;
+  --gold: #b8892d;
+  --gold-light: #e2c172;
+  container-type: inline-size;
+  width: 100%;
+  aspect-ratio: 1.414;
+  padding: 3cqw;
+  border-radius: 6px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgb(255 255 255 / 0.8), transparent 60%),
+    linear-gradient(135deg, #fdf9ef, #f6eedb);
+  color: var(--ink);
+  box-shadow:
+    0 24px 60px rgb(0 0 0 / 0.45),
+    0 0 0 1px rgb(0 0 0 / 0.08);
+  animation: unveil 700ms var(--ease-out) both;
+}
+
+.inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 2.5cqw 5cqw;
+  border: 0.35cqw solid var(--gold);
+  outline: 0.15cqw solid var(--gold-light);
+  outline-offset: -1.2cqw;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.seal {
+  margin-bottom: 0.6cqw;
+  filter: drop-shadow(0 0.4cqw 0.8cqw rgb(184 137 45 / 0.35));
+}
+
+.seal svg {
+  width: 7cqw;
+  height: 7cqw;
+}
+
+.brand {
+  font-size: 1.5cqw;
+  letter-spacing: 0.6em;
+  color: var(--gold);
+}
+
+.heading {
+  margin-top: 0.8cqw;
+  font-size: 4.2cqw;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+}
+
+.presented {
+  margin-top: 2.6cqw;
+  font-size: 1.7cqw;
+  font-style: italic;
+  color: #5b5f78;
+}
+
+.name {
+  margin-top: 0.6cqw;
+  max-width: 100%;
+  font-size: clamp(2.6cqw, 5.2cqw, 5.2cqw);
+  font-style: italic;
+  line-height: 1.15;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+.rule {
+  width: 40%;
+  height: 0.12cqw;
+  margin: 1cqw 0;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+}
+
+.achievement {
+  max-width: 70%;
+  font-size: 1.7cqw;
+  line-height: 1.45;
+  color: #3a3f5c;
+}
+
+.phases {
+  display: flex;
+  gap: 1.4cqw;
+  margin-top: 3cqw;
+}
+
+.phase {
+  --moon-phase-size: 3.2cqw;
+  filter: none;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  margin-top: 4cqw;
+}
+
+.footerItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3cqw;
+  min-width: 26%;
+}
+
+.footerValue {
+  font-size: 1.6cqw;
+  font-weight: 700;
+}
+
+.signature {
+  font-size: 2.6cqw;
+  font-style: italic;
+  color: var(--gold);
+  border-bottom: 0.1cqw solid #8b8fa8;
+  padding: 0 2cqw 0.2cqw;
+}
+
+.footerLabel {
+  font-size: 1.2cqw;
+  color: #6b6f88;
+}
+
+@keyframes unveil {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+}
+
+/* Print only the certificate, on a landscape page. */
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 0;
+  }
+
+  :global(body *) {
+    visibility: hidden;
+  }
+
+  .certificate,
+  .certificate * {
+    visibility: visible;
+  }
+
+  /* Keep the certificate's proportions and fit it to the page, centred. */
+  .certificate {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: min(100vw, 141.4vh);
+    height: auto;
+    border-radius: 0;
+    box-shadow: none;
+    animation: none;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

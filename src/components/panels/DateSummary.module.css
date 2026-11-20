@@ -1,0 +1,216 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.dates {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.term {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-subtle);
+}
+
+/* Weekday on its own line keeps the date on one line, so the card never jumps in height. */
+.gregorian {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--space-1);
+}
+
+.weekday {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-muted);
+}
+
+.primary {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-tight);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+}
+
+.hebrew {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-medium);
+  color: var(--color-accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.holidays {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.holiday {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 0.125rem var(--space-3);
+  border: 1px solid rgb(245 181 68 / 0.45);
+  border-radius: var(--radius-full);
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  animation: holiday-in var(--duration-normal) var(--ease-out);
+}
+
+.holiday svg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.moon {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.phase {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+}
+
+.note {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* ⓘ button: small visually, but with a comfortable touch target */
+.infoButton {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-text-muted);
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+}
+
+.infoButton::after {
+  content: "";
+  position: absolute;
+  inset: -0.5rem;
+}
+
+.infoButton svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.infoButton:hover,
+.infoButton[aria-expanded="true"] {
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+}
+
+/* Inline explanation panel (tablet and desktop) */
+.infoPanel {
+  padding: var(--space-4);
+  border: 1px solid rgb(245 181 68 / 0.3);
+  border-radius: var(--radius-md);
+  background: rgb(245 181 68 / 0.06);
+  animation: holiday-in var(--duration-normal) var(--ease-out);
+}
+
+.infoHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.infoTitle {
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+  color: var(--color-accent);
+}
+
+.infoClose {
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-text-muted);
+}
+
+.infoClose:hover {
+  background: var(--color-surface-hover);
+  color: var(--color-text);
+}
+
+.infoClose svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.infoBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  color: var(--color-text);
+  text-wrap: pretty;
+}
+
+.infoMeta {
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Side-by-side on medium widths where the card spans the full row */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .body {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .moon {
+    padding-top: 0;
+    border-top: 0;
+    padding-inline-start: var(--space-5);
+    border-inline-start: 1px solid var(--color-border);
+  }
+}
+
+@keyframes holiday-in {
+  from {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+}

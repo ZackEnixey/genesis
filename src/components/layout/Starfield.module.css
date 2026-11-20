@@ -1,0 +1,134 @@
+.starfield {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 55% at 72% 42%, rgb(54 66 150 / 0.38), transparent 70%),
+    radial-gradient(ellipse 55% 45% at 8% 92%, rgb(112 58 150 / 0.2), transparent 70%),
+    var(--color-bg);
+}
+
+.nebula {
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(ellipse 30% 22% at 30% 30%, rgb(90 80 200 / 0.12), transparent 70%),
+    radial-gradient(ellipse 25% 18% at 80% 75%, rgb(40 120 200 / 0.1), transparent 70%);
+  filter: blur(20px);
+}
+
+/* Each layer is a square large enough to cover the screen at any rotation. */
+.layer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 150vmax;
+  height: 150vmax;
+  transform: translate(-50%, -50%) rotate(calc(var(--sky, 0deg) * var(--factor, 0.2)));
+  transition: transform var(--sky-transition, 0s) ease-out;
+  will-change: transform;
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* A twinkling star: a small soft point with faint glints that brightens and fades. */
+.twinkle {
+  position: absolute;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff 0 18%, rgb(215 225 255 / 0.55) 32%, transparent 60%);
+  opacity: 0.2;
+  animation-name: twinkle;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  will-change: opacity, transform;
+}
+
+.twinkle::before,
+.twinkle::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  opacity: 0.45;
+}
+
+.twinkle::before {
+  width: 160%;
+  height: 0.5px;
+  background: linear-gradient(to right, transparent, #ffffff, transparent);
+}
+
+.twinkle::after {
+  width: 0.5px;
+  height: 160%;
+  background: linear-gradient(to bottom, transparent, #ffffff, transparent);
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: scale(0.6);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1);
+  }
+}
+
+/*
+ * Shooting star: a thin streak with a bright head, travelling along --angle.
+ * Kept faint and slow so it stays calm.
+ */
+.shootingStar {
+  position: absolute;
+  height: 1.5px;
+  border-radius: 999px;
+  background: linear-gradient(to right, transparent, rgb(190 205 255 / 0.25) 55%, rgb(255 255 255 / 0.85));
+  filter: drop-shadow(0 0 3px rgb(190 210 255 / 0.7));
+  transform-origin: right center;
+  opacity: 0;
+  animation-name: shoot;
+  animation-timing-function: cubic-bezier(0.35, 0.1, 0.55, 1);
+  animation-fill-mode: forwards;
+  pointer-events: none;
+}
+
+.shootingStar::after {
+  content: "";
+  position: absolute;
+  right: -1.5px;
+  top: 50%;
+  width: 3px;
+  height: 3px;
+  translate: 0 -50%;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 6px 2px rgb(205 220 255 / 0.75);
+}
+
+@keyframes shoot {
+  0% {
+    opacity: 0;
+    transform: rotate(var(--angle)) translateX(0) scaleX(0.4);
+  }
+  15% {
+    opacity: 0.8;
+    transform: rotate(var(--angle)) translateX(calc(var(--distance) * 0.15)) scaleX(1);
+  }
+  70% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(var(--angle)) translateX(var(--distance)) scaleX(0.6);
+  }
+}
